@@ -6,7 +6,7 @@ WriteMakefile(
     NAME                => 'SlowFox',
     AUTHOR              => q{Hugues MaX <huguesmax@gmail.com>},
     VERSION_FROM        => 'lib/m30.pm',
-    ABSTRACT            => 'Money 30 TOOLS',
+    ABSTRACT            => 'SlowFox CRM',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'perl')
       : ()),

@@ -1,7 +1,7 @@
 {
-   "abstract" : "Money 30 TOOLS",
+   "abstract" : "SlowFox",
    "author" : [
-      "Hugues BOUHANA <hugues.bouhana@softalys.com>"
+      "Hugues Max <huguesmax@gmail.com>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "ExtUtils::MakeMaker version 6.98, CPAN::Meta::Converter version 2.133380",
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "m30",
+   "name" : "SlowFox",
    "no_index" : {
       "directory" : [
          "t",

@@ -1,7 +1,7 @@
 ---
-abstract: 'Money 30 TOOLS'
+abstract: 'SlowFox'
 author:
-  - 'Hugues BOUHANA <hugues.bouhana@softalys.com>'
+  - 'Hugues MaX <huguesmax@gmail.com>'
 build_requires:
   ExtUtils::MakeMaker: 0
 configure_requires:

@@ -56,17 +56,6 @@
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-[% FOREACH roles = session.user.roles %]
-	[% IF roles == 'sav' %]          [% savrole=1          %]        [% END %]
-	[% IF roles == 'savadmin' %]     [% savadminrole=1     %] 	 [% END %]
-	[% IF roles == 'recouvrement' %] [% recouvrementrole=1 %] 	 [% END %]
-	[% IF roles == 'recouvrementadmin' %] [% recouvrementadminrole=1 %] 	 [% END %]
-
-
-
-
-[% END %]
-
 
 
 	       	<!-- Faire apparaitre le menu prodige -->
@@ -76,57 +65,22 @@
 		                <li [% IF (request.path.search('clients'))     %] class="active" [% END %] > <a href="[% request.uri_base %]/clients">Clients</a></li>
 		                <li [% IF (request.path.search('outils'))      %] class="active" [% END %] > <a href="[% request.uri_base %]/outils">Outils</a></li>
                 		<li [% IF (request.path.search('downloads'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/downloads">Downloads</a></li>
-		                <li [% IF (request.path.search('prelevement')) %] class="active" [% END %] > <a href="[% request.uri_base %]/prelevement">Prelevements</a></li>
+		                <li [% IF (request.path.search('prelevement')) %] class="active" [% END %] > <a href="[% request.uri_base %]/prelevements">Prelevements</a></li>
 			[% END %]
 		[% END %]
 
 
-	       	<!-- Faire apparaitre le menu prodige -->
-		[% FOREACH roles = session.user.roles %]
-			[% IF roles == 'prodige' %]
-        	        <li [% IF (request.path.search('prodige'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/prodige">Prodige</a></li>
-			[% END %]
-		[% END %]
-
-		<!-- Faire apparaitre le menu ingenico -->
-		[% FOREACH roles = session.user.roles %]
-			[% IF roles == 'client.ingenico' %]
-        	        <li [% IF (request.path.search('export'))    %] class="active" [% END %] > <a href="[% request.uri_base %]/client/export">Export</a></li>
-			[% END %]
-		[% END %]
-		
-	 	<!-- Faire apparaitre le menu SAV -->
-		[% IF savrole == 1 %]
-        	        <li [% IF (request.path.search('dossier'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/sav/search">S.A.V.</a></li>
-		[% END %]
-
-	 	<!-- Faire apparaitre le menu SAVADMIN -->
-		[% IF savadminrole == 1 %]
-        	        <li [% IF (request.path.search('dossier'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/savadmin/savadmin">S.A.V. Admin</a></li>
-		[% END %]
-
- 		<!-- Faire apparaitre le menu RECOUVREMENT -->
-		[% IF recouvrementrole == 1 %]
-        	        <li [% IF (request.path.search('dossier'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/recouvrement/search">Recouvrement</a></li>
-		[% END %]
-
-		<!-- Faire apparaitre le menu RECOUVREMENT ADMIN-->
-		[% IF recouvrementadminrole == 1 %]
-        	        <li [% IF (request.path.search('dossier'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/recouvrementadmin/search">Admin Recouvrement</a></li>
-		[% END %]
 
 
 
 
     </ul>
-[% IF savadmin == 1 %]
     <form class="navbar-form navbar-left" role="search" method="post" action="[% request.uri_base %]/search">
       <div class="form-group">
         <input type="text" class="form-control" name="search" placeholder="Chercher">
       </div>
       <button type="submit" class="btn btn-default">Go</button>
     </form>
-[% END %]
 
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">

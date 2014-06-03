@@ -134,10 +134,6 @@ plugins:
          handle: slowfox 
  
 
-#    NYTProf:
-#        profdir: '/home/money30/DancerM30/tmp'
-#        nytprofhtml_path: '/usr/local/bin/nytprofhtml'
-
 # Liste des roles avec les droits correspondants ( attention ne supporte pas les accents  dans les commentaires)
 # Attention de bien avoir la liste a jour entre la partie RBAC et ROLE_LIST
 

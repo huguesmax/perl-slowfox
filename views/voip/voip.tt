@@ -158,7 +158,7 @@
 <!-- Here we setup Zoiper Web not to ring when the user is already on the phone--> 
       Config.RingWhenTalking = "false";
 <!-- Here we create or get an existing "Account" object called "Sample". The "Account" is going to use the SIP protocol -->                        
-      Account = Zoiper.AddAccount("Money30", "iax");
+      Account = Zoiper.AddAccount("SlowFox", "iax");
 <!-- Here we set the "Account" properties -->                    
       Account.Host     = "[% VOIPSERVER %]:[% VOIPORT %]";
       Account.CallerID = "[% fistname %] [% name %]";
@@ -185,13 +185,13 @@
       Zoiper.UseAccount("Sample");
 <!-- Here we create a new "Contact" object with primary number "web demo" and set its properties -->
       var Contact         = Zoiper.AddContact("hugues");
-      Contact.Account     = "Money30";
-      Contact.Display     = "Hugues BOUHANA";
-      Contact.FirstName   = "Hugues";
+      Contact.Account     = "SlowFox";
+      Contact.Display     = "Jean Bernard";
+      Contact.FirstName   = "Jean";
       Contact.MiddleName  = "";
-      Contact.LastName    = "BOUHANA";
+      Contact.LastName    = "BERNARD";
       Contact.Country     = "France";
-      Contact.City        = "Le Rouret";
+      Contact.City        = "Paris";
       Contact.WorkPhone   = "20";
       Contact.HomePhone   = "home";
       Contact.CellPhone   = "cell";

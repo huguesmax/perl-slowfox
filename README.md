@@ -1,20 +1,119 @@
-#
-#
-#
-#  $$$$$$\  $$\                         $$$$$$$$\
-# $$  __$$\ $$ |                        $$  _____|
-# $$ /  \__|$$ | $$$$$$\  $$\  $$\  $$\ $$ |    $$$$$$\  $$\   $$\
-# \$$$$$$\  $$ |$$  __$$\ $$ | $$ | $$ |$$$$$\ $$  __$$\ \$$\ $$  |
-#  \____$$\ $$ |$$ /  $$ |$$ | $$ | $$ |$$  __|$$ /  $$ | \$$$$  /
-# $$\   $$ |$$ |$$ |  $$ |$$ | $$ | $$ |$$ |   $$ |  $$ | $$  $$<
-# \$$$$$$  |$$ |\$$$$$$  |\$$$$$\$$$$  |$$ |   \$$$$$$  |$$  /\$$\
-#  \______/ \__| \______/  \_____\____/ \__|    \______/ \__/  \__|
-#
-#  dance slowfox
-# 2014
-# created by Hugues MaX hugues@max4mail.com
-# Based on Perl Dancer 1 http://www.dancer.com
-# Inspired from http://cowbell.cancan.cshl.edu/
+ 
+<pre>
+ $$$$$$\  $$\                         $$$$$$$$\
+ $$  __$$\ $$ |                        $$  _____|
+ $$ /  \__|$$ | $$$$$$\  $$\  $$\  $$\ $$ |    $$$$$$\  $$\   $$\
+ \$$$$$$\  $$ |$$  __$$\ $$ | $$ | $$ |$$$$$\ $$  __$$\ \$$\ $$  |
+  \____$$\ $$ |$$ /  $$ |$$ | $$ | $$ |$$  __|$$ /  $$ | \$$$$  /
+ $$\   $$ |$$ |$$ |  $$ |$$ | $$ | $$ |$$ |   $$ |  $$ | $$  $$<
+ \$$$$$$  |$$ |\$$$$$$  |\$$$$$\$$$$  |$$ |   \$$$$$$  |$$  /\$$\
+  \______/ \__| \______/  \_____\____/ \__|    \______/ \__/  \__|
+</pre>
+
+## SlowFox Dance 2014 ( Version Française plus bas ) 
+> slow down your FireFox :-)
+
+
+created by Hugues MaX hugues@max4mail.com
+
+Based on Perl Dancer 1 [http://www.dancer.org](http://www.dancer.org)
+
+Directly Inspired from [http://cowbell.cancan.cshl.edu/](http://cowbell.cancan.cshl.edu/)
+
+
+## What is SlowFox ? ##
+
+SlowFox is a Dancer 1 application for your Entreprise - this is a collection of web
+pages pre formated to show you how to use and develop using 
+
+- [Perl](http://www.perl.org)
+- [Dancer framwork](http://perldancer.org/) 
+- [Mysql](http://www.mysql.com/)
+- [Redis Key-Value Session Store](http://redis.io/)
+- [Twitter Bootstrap](http://getbootstrap.com/)
+- [JQuery](http://jquery.com/)   
+
+## What I can do whith SlowFox ##
+
+As you want ( the world is not engouth ) I use SlowFox for my Job, I developpe a entreprise class software you manage some customers....
+
+## How to Install SlowFox ##
+
+You need a modern distro as Redhat 6.X/Centos 6.x/Fedora or Debian 7 / Ubuntu 12/ 14
 
 
 
+    Debian/Ubuntu : sudo apt-get install Redis mysql-server mysql curl
+
+Or
+
+
+    Redhat/Centos/Fedora : yum install Redis mysql-server mysql curl 
+
+Perl Dancer, SlowFox need lot of perl Module, the best way to install all this modules is to 
+use [Cpanminus](https://metacpan.org/pod/App::cpanminus).
+
+ 
+As root user
+
+
+    curl -L http://cpanmin.us | perl - App::cpanminus
+
+for Debian/Ubuntu
+
+
+    curl -L http://cpanmin.us | perl - --sudo App::cpanminus
+
+
+
+You can use also yum or apt-get.
+
+
+    
+    cpanm Dancer YAML Template JSON Redis Dancer::Session::Redis   Dancer::Plugin::Email Dancer::Plugin::Database
+    Dancer::Plugin::Auth::RBACCrypt::Eksblowfish::Bcrypt DateTime::Format::Strptime Tie::IxHash Spreadsheet::ParseExcel
+    Spreadsheet::WriteExcel Modern::Perl DateTime::Format::MySQL   DateTime::Format::Duration Dancer::Plugin::Redis
+    HTML::Strip Daemon::Control Net::Server
+
+And
+
+
+    cpanm Server::Starter
+
+And
+
+    cpanm Net::Server::SS::PreFork
+
+And
+
+    cpanm Starman   DBD::mysql
+
+
+
+And Wait..... Cup of coffee Time....
+
+
+## OK now we can start: ##
+
+download lastest version of slowfox
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -22,8 +22,8 @@
       </div>
 [% END %]
 
-        Bonjour, <span class="label label-warning">[% session.username | html %]</span>.
-        Vous êtes bien connecté aux Outis de traitements automatiques de Money30.
+        Hello, <span class="label label-warning">[% session.username | html %]</span>.
+        Your are connected on SlowFox using  Perl Dancer.
 
 
       <br/>
@@ -38,8 +38,8 @@
 <br />
 <div class="jumbotron">
   <h1>Version Beta</h1>
-  <p>Cet outil est en version beta merci de remonter les bug à l'adminstrateur</p>
-  <p><div class="btn btn-primary btn-lg" role="button">Money30</div></p>
+  <p>this tool use Perl Dancer, Template Toolkit, Mysql, Bootstrap Twitter and jQuery... Asterisk Zioper</p>
+  <a href="http://www.youtube.com/watch?v=-HEIf2yP_P8"><div class="btn btn-primary btn-lg" role="button">Dance SlowFox</div></a>
 </div>
 
 

@@ -15,12 +15,7 @@ use Crypt::Eksblowfish::Bcrypt;		         	# Encodage et salage des mots de pass
 
 
 use admin::admin;		        # Page d'admin du site
-use slowfox::accueil;			# Page accueil
-#use slowfox::clients;			# Page clients
-#use slowfox::outils;			# Page outils
-#use slowfox::downloads;			# Page downloads 
-#use slowfox::prelevement;		# Page historiques
-#use slowfox::support;			# Page support
+use slowfox::menu;			# Page accueil
 
 
 our $VERSION        = '0.11';

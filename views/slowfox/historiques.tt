@@ -5,7 +5,7 @@
 
   <div class="row">
 
-    <div class="span6">
+    <div class="col-md-12">
 
 [% ####### Affichage des messages de warning pour le login  ####### %]
 [% IF show_warning %]
@@ -22,16 +22,9 @@
       </div>
 [% END %]
 
+        Hello, <span class="label label-warning">[% session.username | html %]</span>.
+        Your are connected on SlowFox using  Perl Dancer.
 
-
-[% IF not session.username %]
-      Merci de contacer l'adminstrateur pour obtenir un Username et Mot de passe valide.
-
-[% ELSE %]
-        Bonjour, <span class="label label-warning">[% session.username | html %]</span>.
-        Vous êtes bien connecté aux Outis de traitements automatiques de Money30.
-
-[% END %]
 
       <br/>
 
@@ -41,8 +34,15 @@
 
 [% ### L'utilisateur est connecté j'affiche la page %] 
 [% IF session.username %]
-<br>
-<h4> Page Historiques a faire </h4>
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Version Beta</h1>
+  <p>this tool use Perl Dancer, Template Toolkit, Mysql, Bootstrap Twitter and jQuery... Asterisk Zioper</p>
+  <a href="http://www.youtube.com/watch?v=-HEIf2yP_P8"><div class="btn btn-primary btn-lg" role="button">Dance SlowFox</div></a>
+</div>
+
+
 
 [% END %]
 

@@ -149,13 +149,13 @@
       Zoiper.UseAccount("Sample");
 <!-- Here we create a new "Contact" object with primary number "web demo" and set its properties -->
       var Contact         = Zoiper.AddContact("Hugues");
-      Contact.Account     = "Money30";
-      Contact.Display     = "Hugues BOUHANA";
-      Contact.FirstName   = "Hugues";
+      Contact.Account     = "Jean";
+      Contact.Display     = "Jean Bernard";
+      Contact.FirstName   = "Jean";
       Contact.MiddleName  = "";
-      Contact.LastName    = "BOUHANA";
+      Contact.LastName    = "Bernard";
       Contact.Country     = "France";
-      Contact.City        = "Le Rouret";
+      Contact.City        = "Paris";
       Contact.WorkPhone   = "1212";
       Contact.HomePhone   = "home";
       Contact.CellPhone   = "cell";

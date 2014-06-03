@@ -24,7 +24,7 @@
 
       <div class="masthead">
 
-	<h3 class="muted">Money30 net</h3>
+	<h3 class="muted">SlowFox</h3>
 [% IF session.username %]
       [% ###### Embedded dropdown menu in the Nav-Bar ####### %]
 
