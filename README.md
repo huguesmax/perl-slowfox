@@ -12,7 +12,7 @@
 
 </pre>
 -
-## SlowFox Dance 2014
+## SlowFox Dance 2014 ##
 > slow down your FireFox :-)
 > (Version Française plus bas.)
 
