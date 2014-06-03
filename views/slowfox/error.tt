@@ -1,0 +1,26 @@
+<!-- BootStrap NavBar -->
+
+<!-- HEADER line -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12">
+[% IF show_warning %]
+      <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button> 
+      <strong>Gloup's! </strong> [% show_warning %] <span class="glyphicon glyphicon-thumbs-down"></span>
+      </div>
+[% END %]
+
+[% IF show_success %]
+      <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Bravo ! </strong> [% show_success %] <span class="glyphicon glyphicon-thumbs-up"></span>
+      </div>
+[% END %]
+
+
+      </div>
+   </div>
+</div>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-type" content="text/html; charset=[% settings.charset %]" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>[% settings.appname %]</title>
+
+<link rel="stylesheet" href="[% request.uri_base %]/bootstrap/css/bootstrap.css" >
+<link rel="stylesheet" href="[% request.uri_base %]/fontawesome/css/font-awesome.css" >
+<link rel="stylesheet" href="[% request.uri_base %]/css/style.css" >
+
+</head>
+
+<!-- Menu général de l'application-->
+<header>
+
+
+<div class="container">
+
+      <div class="masthead">
+
+	<h3 class="muted">Money30 net</h3>
+[% IF session.username %]
+      [% ###### Embedded dropdown menu in the Nav-Bar ####### %]
+
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+  </div>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+
+		<li [% IF (request.path.search('accueil'))     %] class="active" [% END %] > <a href="[% request.uri_base %]/accueil">Accueil</a></li>
+                <li [% IF (request.path.search('clients'))     %] class="active" [% END %] > <a href="[% request.uri_base %]/clients">Clients</a></li>
+                <li [% IF (request.path.search('outils'))      %] class="active" [% END %] > <a href="[% request.uri_base %]/outils">Outils</a></li>
+                <li [% IF (request.path.search('downloads'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/downloads">Downloads</a></li>
+                <li [% IF (request.path.search('prelevement')) %] class="active" [% END %] > <a href="[% request.uri_base %]/prelevement">Prelevements</a></li>
+                <li [% IF (request.path.search('support'))     %] class="active" [% END %] > <a href="[% request.uri_base %]/support">Support</a></li>
+
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Chercher">
+      </div>
+      <button type="submit" class="btn btn-default">Go</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+			<span class="glyphicon glyphicon-user">&nbsp;</span>
+			[% session.username | html %] <b class="caret"></b>&nbsp; &nbsp; &nbsp;
+		</a>
+
+        <ul class="dropdown-menu">
+	      <li><a href="[% request.uri_base %]/profil">Profil</a></li>
+              <li><a href="[% request.uri_base %]/password">Password</a></li>
+              <li><a href="[% request.uri_base %]/disconnect">Déconnexion</a></li>
+        </ul>
+
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+ </div>
+</div>
+
+
+
+[% END %]
+
+</header>
+
+<body>
+
+[% content %]
+
+<script src="[% request.uri_base %]/javascripts/jquery-1.8.3.min.js"></script>
+<script src="[% request.uri_base %]/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="[% request.uri_base %]/javascripts/nodal.js"></script>
+
+<script>
+$("#impayeALL").click(function(){
+		myApp.showPleaseWait();
+		}
+
+</script>
+
+
+
+<script>
+  $(document).ready(function()
+      {
+      });
+</script>
+
+<br />
+<br />
+
+
+<footer>
+    <div class="footer">
+	<div class="row">
+	  <div class="col-6 col-sm-4 col-lg-4"></div>
+	  <div class="col-6 col-sm-4 col-lg-4"><small>Powered by <a href="http://www.softalys.com/">Softalys </a> [% dancer_version %] </small> </div>
+	  <div class="col-6 col-sm-4 col-lg-4"></div>
+	</div>
+    </div>
+
+</footer>
+
+
+</body>
+</html>

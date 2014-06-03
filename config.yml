@@ -1,0 +1,208 @@
+#############################################################################
+#                                                                           #
+#  $$$$$$\           $$$$$$\   $$\             $$\                          #
+# $$  __$$\         $$  __$$\  $$ |            $$ |                         #
+# $$ /  \__|$$$$$$\ $$ /  \__$$$$$$\   $$$$$$\ $$ $$\   $$\ $$$$$$$\        #
+# \$$$$$$\ $$  __$$\$$$$\    \_$$  _|  \____$$\$$ $$ |  $$ $$  _____|       #
+#  \____$$\$$ /  $$ $$  _|     $$ |    $$$$$$$ $$ $$ |  $$ \$$$$$$\         #
+# $$\   $$ $$ |  $$ $$ |       $$ |$$\$$  __$$ $$ $$ |  $$ |\____$$\        #
+# \$$$$$$  \$$$$$$  $$ |       \$$$$  \$$$$$$$ $$ \$$$$$$$ $$$$$$$  |       #
+#  \______/ \______/\__|        \____/ \_______\__|\____$$ \_______/        #
+#                                                 $$\   $$ |                #
+#                                                 \$$$$$$  |                #
+#                                                  \______/                 #
+#                                                                           #
+#                                                                           #
+# Copyright www.softalys.com                                                #
+#############################################################################
+
+
+# This is the main configuration file of your Dancer app
+# env-related settings should go to environments/$env.yml
+# all the settings in this file will be loaded at Dancer's startup.
+
+# Your application's name
+appname: "slowfox"
+
+# The default layout to use for your application (located in
+# views/layouts/main.tt)
+layout: "main"
+
+# Suppression de la ligne X-Powered-By: Perl Dancer 1.312 dans
+# les Headers Apache (0/1)
+
+server_tokens: 0
+
+# when the charset is set to UTF-8 Dancer will handle for you
+# all the magic of encoding and decoding. You should not care
+# about unicode within your app when this setting is set (recommended).
+charset: "UTF-8"
+
+template: "template_toolkit"
+
+engines:
+   template_toolkit:
+     encoding:  'utf8'
+     start_tag: '[%'
+     end_tag:   '%]'
+
+serializer: 'JSON'
+#environment: 'production'
+environment: 'development'
+
+# gestion des sessions d'utilisateur dans la base de données
+session: 'YAML'
+#session: 'Redis'
+
+session_name: session.slowfox
+#A ajouter pour forcer l'envoie en ssl des cookies de sessions
+#session_secure: true
+
+# Sel de l'application - attention de ne pas perdre
+# Longueur 16ocet / 23 caractères
+salt: 'AIfoBACaIDjYUc1yLfO3ou'
+
+DBNAME: slowfox
+
+plugins:
+    Database:
+        connections:
+                   slowfox:
+                          driver:   'mysql'
+                          database: 'slowfox'
+                          host:     'localhost'
+                          port:     3306
+                          username: 'admin'
+                          password: 'eliott'
+                          connection_check_threshold: 10
+                          dbi_params:
+                                      RaiseError: 1
+                                      AutoCommit: 1
+                                      mysql_enable_utf8 : 1
+                                      charset: utf8        
+                          #on_connect_do: ["SET NAMES 'utf8'", "SET CHARACTER SET 'utf8'" ]
+                          log_queries: 1
+# If you want to use Redis ( not only in session manager )
+
+#    Redis:
+#        server: '127.0.0.1:6379'
+#        debug: 0       
+        #password: 'Aemah3aiSahji5PoyeKae0maPhoo7oChOhK8ieyu'        
+        #encoding: utf-8
+#        reconnect: 60
+#        database: 1 
+
+   
+
+# Module support MultiLangue
+############################  
+
+                          #    I18N:
+                          #        lang_default: fr
+                          #        name_param: lang
+                          #        name_session: language
+
+
+#ROLE BASE ACCESS CONTROLE avec Mysql
+#Permet de manager les acces et les droits
+        
+    Auth::RBAC:
+      permissions:
+        class: Config
+        options:
+          control:
+            admin:
+              permissions:
+                manage accounts:
+                  operations:
+                    - view
+                    - create
+                    - update
+                    - delete
+            user:
+              permissions:
+                manage accounts:
+                  operations:
+                    - view
+                    - create
+            guests:
+              permissions:
+                manage accounts:
+                  operations:
+                    - view
+            voip:
+             permissions:
+
+      credentials:
+        class: MySQL
+        options:
+         handle: slowfox 
+ 
+
+#    NYTProf:
+#        profdir: '/home/money30/DancerM30/tmp'
+#        nytprofhtml_path: '/usr/local/bin/nytprofhtml'
+
+# Liste des roles avec les droits correspondants ( attention ne supporte pas les accents  dans les commentaires)
+# Attention de bien avoir la liste a jour entre la partie RBAC et ROLE_LIST
+
+ROLE_LIST: 
+        admin:
+                Def: 'SuperUser, avec tous les droits'
+        user:
+                Def: 'Utilisateur Simple sans droit particulier'
+        guests:
+                Def: 'User Simple'
+        voip:
+                Def: 'Access au service de Voix sur IP, Attention cela permet de telephoner !'
+
+
+
+#####################
+VOIPSERVER: '192.168.1.10'
+VOIPPORT: '4569'
+VOIPCODEC: 'iLBC 30'
+STUNHOST: '192.168.1.10'
+STUNPORT: '3478'
+
+
+# Add IP for VOIP allowed
+##############################################
+#huguestestInterne    = 88.88.88.1 
+#huguesIpExterne      = 88.88.88.2
+
+ALLOWEDIP: '192.168.0.19, 88.88.88.2'
+
+#IP du Serveur SMTP pour envoyer des emails
+SMTP: '217.13.51.248'
+
+# Chemin d'accès des fichiers temporaire pour le download
+PUBLICTMP : '/home/slowfox/public/tmp/'
+
+# VAT TAX 
+TVA : 0.2
+
+
+#Chemin d'acces aux fichiers stockés sur le disque
+PATHFILES : '/home/slowfox/public/files'
+
+
+#REDIS SESSION
+#################
+
+# yum install Redis on redhat/Centos
+# apt-get install redis on Debian/Ubuntu       
+# add perl module: cpanm Dancer::Session::Redis        
+# add vm.overcommit_memory = 1 à /etc/sysctl.conf
+# OR  faire sysctrl -w vm.overcommit_memory=1
+# DO chkconfig redis on on redhat/Centos
+# redis.conf is in slowfox/doc/redis.conf
+# Set password if necessary
+
+#redis_session:
+#      server: '127.0.0.1:6379'
+      #password: 'Aemah3aiSahji5PoyeKae0maPhoo7oChOhK8ieyu'
+#      database: 1
+#      expire: 14400
+#      debug: 0 
+#      ping: 5

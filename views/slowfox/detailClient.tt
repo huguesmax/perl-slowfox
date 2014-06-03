@@ -1,0 +1,211 @@
+<!-- BootStrap NavBar -->
+
+<!-- HEADER line -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12">
+[% IF show_warning %]
+      <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button> 
+      <strong>Gloup's! </strong> [% show_warning %] <span class="glyphicon glyphicon-thumbs-down"></span>
+      </div>
+[% END %]
+
+[% IF show_success %]
+      <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Bravo ! </strong> [% show_success %] <span class="glyphicon glyphicon-thumbs-up"></span>
+      </div>
+[% END %]
+
+
+      <br/>
+      </div>
+   </div>
+</div>
+[%  FOREACH item IN resultC %]
+<div class="container">
+
+		   <table class="table table-striped">
+			   
+		<tbody>
+			    <td class="col-sm-2">Code Client:</td>
+			    <td class="text-primary">[% CodeClient %]</td>
+			    <td> 
+					[% IF item.CoteFinanciere == "BON" %]
+			                       <div class="text-right"> <span class="label label-success">&nbsp; &nbsp; [% item.CoteFinanciere %]&nbsp;&nbsp;  <span class="glyphicon glyphicon-thumbs-up"></span></span></div>
+                       			[% ELSE %]
+			                       <div class="text-right"> <span class="label label-danger"> &nbsp;&nbsp;[% item.CoteFinanciere  %]&nbsp;&nbsp; <span class="glyphicon glyphicon-thumbs-down"></span>  </span></div>
+		                       [% END %]
+			    </td>
+	        </tbody>
+  	        <tbody>
+			    <td class="col-sm-2">Société:</td>
+			    <td class="text-danger">[% item.NomClient.upper %]  [% IF item.Enseigne.upper %] / [% item.Enseigne.upper %] [% END %]</td>
+			    <td>&nbsp;</td>
+                </tbody>
+                <tbody>
+   			   <td class="col-sm-2">Adresse:</td>
+			   <td>[% item.Adresse FILTER lower %] </td>
+			   <td>&nbsp;</td>	
+                </tbody>
+                <tbody>
+    			  <td class="col-sm-2">CP / Ville:</td>
+			  <td>[% item.CodePostal %] [% item.Ville %]</td>
+			  <td>&nbsp;</td>
+                </tbody>
+                <tbody>
+                         <td class="col-sm-2">Tel:</td>
+                         <td>[% item.Tel %]</td>
+                         <td>&nbsp;</td>
+	        </tbody>
+		 	[% IF Fax %]
+			<tbody>
+                        	<td class="col-sm-2">Fax:</td>
+	                        <td>[% Fax %]</td>
+        	                <td>&nbsp;</td>
+               		</tbody>
+                  	[% END %]
+
+                <tbody>
+                        <td class="col-sm-2">Type de Contrat:</td>
+                        <td>[ [% item.CategorieClient %] ] - [ [% item.CodeAgence %] ] - [% item.ConditionReglement %] ]</td>
+                        <td>&nbsp;</td>
+               </tbody>
+  	       <tbody>
+    			<td class="col-sm-2">IBAN / BIC:</td>
+			<td> [ [% item.RIB %] ] - [ [% item.BIC %] ]</td>
+		        <td>&nbsp;</td>
+	      </tbody>
+	</table>
+
+  </div>
+	
+
+[% USE date(format = '%d %b %Y') %]
+[% USE money=format('%.2f') %]
+[% END %]
+<br />
+
+[% #USE dumper(indent=0, pad="<br>") %]
+[% #dumper.dump(h_PR) %]
+[% #dumper.dump(h_statut) %]
+
+<div class="container">
+	<p><em>	Liste des contrats et du parc au [% date.format(now) %]:</em></p>
+[%  FOREACH item IN resultCC %]
+  <div class="panel-group" id="accordion">
+   <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse[% loop.count %]">
+		    [% loop.count %] - [% item.NumContrat %] </a><small> [% item.TypeContrat %]  - [% item.Categoriecontrat %]
+		    -Echéance: [% date.format(item.Echeance) %] -Fin Contrat: [% date.format(item.DateRenouvellement) %] </small>
+		    [% IF item.Annulation == 0 %] 
+		    <div class="text-right"> <span class="badge">Contrat: [% money(item.PrixTotal*3) %] €/HT/trim. </span> <span class="label label-success"> Contrat Actif <span class="glyphicon glyphicon-thumbs-up"></span> </span></div>
+		    [% ELSE %] 
+		    <div class="text-right"> <span class="badge">Contrat: [% money(item.PrixTotal*3) %] €/HT/trim. </span> <span class="label label-danger"> Contrat Inactif <span class="glyphicon glyphicon-thumbs-down"></span>  </span></div>
+		    [% END %]
+          </h4>
+      </div>
+      <div id="collapse[% loop.count %]" [% IF loop.count>1  %] class="panel-collapse collapse" [% ELSE %] class="panel-collapse collapse in" [% END %] >
+        <div class="panel-body">
+		<div class="row"> 
+			<div class="col-md-0"><button type="button" class="btn btn-primary">Materiels</button> </div>
+		   <div class="col-md-12"> 
+		      <p> [% IF item.Reconductible == 1 %] Reconductible: OUI [% ELSE %] Reconductible: NON  [% END %]  </p>
+		      [% IF item.Conditions %] <pre> <b> Conditions: </b> [% item.Conditions %] </pre> [% END %]  
+		      <p> [% IF item.MotifAnnulation %] Motif Annulation: [% item.MotifAnnulation %] [% END %]  </p>
+		      <p> [% IF item.DateAnnulation %] Date Annulation: [% date.format(item.DateAnnulation) %] [% END %]  </p>
+
+		      <!-- Affichage du Parc -->
+	     		  [% FOREACH itemCP IN resultCP %]
+				<ul>
+		       		[% IF item.NumContrat == itemCP.NumContrat %]
+				<li class="text-primary"> <span class="badge"> [% itemCP.Quantite %] </span> - [% itemCP.Specifique %] [  <small> 
+					[% itemCP.CodeArticle %] - [% itemCP.NumSerie %] </small> ]</li> 
+				[% END %]
+				</ul>
+		       [% END %]
+		   </div>
+		   [% IF resultCPre.item %] 
+		   <div class="col-md-0"> <button type="button" class="btn btn-warning">Prélèvements</button></div>
+		   <div class="col-md-12">
+		   <!-- Affichage des prélèvements -->
+		   <table class="table table-condensed table-striped ">
+		            <tr>
+		               <th>ID</th>
+		               <th>Libellé Prélèvement</th>
+			       <th>IBAN</th>
+			       <th>BIC</th>
+			       <th>Date Prélèvement</th>
+			       <th>Montant TTC</th>
+			       <th>Statut</th>
+		          </tr>							                               
+			 [% #Affichage des prélèvements d'origine sans IdPrelevementReSent %]
+	     		 [% FOREACH itemCPre IN resultCPre %]
+		       			[% IF item.NumContrat == itemCPre.NumContrat %]
+
+				  	     [% IF ! itemCPre.IdPrelevementReSent %]
+					             [% id = itemCPre.ID; IF h_statut.$id  %] <tr class="success"> [% ELSE %]  <tr class="danger">  [% END %]
+
+					        <td> [% itemCPre.ID %]</td> 
+						<td> [% itemCPre.LibellePrelevement %] </td> 
+						<td> [% itemCPre.IBAN %] </td> 
+						<td> [% itemCPre.BIC %] </td> 
+						<td> [% date.format(itemCPre.DatePrelevement) %] </td> 
+						<td> [% money(itemCPre.Montant) %] € </td> 
+						<td> [% IF h_statut.$id  %] Réglé [% ELSE %] Impayé ! [% END %]  </td> 
+				                                                              </tr>
+					  	 
+							[% FOREACH itemCPre IN resultCPre %]
+								     [% IF item.NumContrat == itemCPre.NumContrat %]
+								     
+								     [% IF  ! itemCPre.DetailStatut %] <tr class="success"> [% ELSE %] <tr class="danger"> [% END %]
+								</table> [% i=0; i=i+1 %] [% i %]  
+								 [% itemCPre.ID %]  
+								[% date.format(itemCPre.DatePrelevement) %]  
+								[% money(itemCPre.Montant) %] €  
+								[% itemCPre.Statut %]  
+								[% itemCPre.DetailStatut %]  
+								[% date.format(itemCPre.DateStatut) %] <br /> 
+										                      
+     								    [% END %]
+							[% END %]	    
+
+					
+
+
+
+					   [% END %]
+				      [% END %]
+
+		         [% END %]
+			</table>
+
+
+
+		 </table>
+
+		 [% END %]
+
+		  </div>
+
+
+
+
+
+
+      </div>
+   </div>
+  </div>
+</div>
+[% END %]
+</div>
+
+
+</div>
+</div>
+</div>

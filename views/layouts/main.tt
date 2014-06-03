@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-type" content="text/html; charset=[% settings.charset %]" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>[% settings.appname %]</title>
+
+<link rel="stylesheet" href="[% request.uri_base %]/bootstrap/css/bootstrap.min.css" >
+<link rel="stylesheet" href="[% request.uri_base %]/fontawesome/css/font-awesome.min.css" >
+<link rel="stylesheet" href="[% request.uri_base %]/css/style.css" >
+
+
+</head>
+
+<!-- Menu général de l'application-->
+<header>
+
+
+<div class="container">
+
+      <div class="masthead">
+
+	<h3 class="muted">SlowFox</h3>
+[% IF session.username %]
+      [% ###### Embedded dropdown menu in the Nav-Bar ####### %]
+
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span> 
+      <span class="icon-bar"></span> 
+      <span class="icon-bar"></span>
+    </button>
+
+[% FOREACH roles = session.user.roles %]
+        [% IF roles == 'voip' %]
+	[% voip = 1 %]
+	<script language="javascript">
+	   function ouvre_popup(page) { window.open(page,"Voip","directories=no, titlebar=no, left=0, top=0, location=no, resizable=no, menubar=no, status=no, scrollbars=no, menubar=no, width=462, height=500");   }
+        </script>
+	<div class="navbar-brand"> <a href="javascript:ouvre_popup('[% request.uri_base %]/voip')"><span class="glyphicon glyphicon-headphones"></span></a></div>
+        [% END %]
+[% END %]
+
+[% IF voip != 1 %]
+    <div class="navbar-brand" href="[% request.uri_base %]/accueil"><span class="glyphicon glyphicon-home"></span></div>
+[% END %] 
+
+  </div>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+[% FOREACH roles = session.user.roles %]
+	[% IF roles == 'sav' %]          [% savrole=1          %]        [% END %]
+	[% IF roles == 'savadmin' %]     [% savadminrole=1     %] 	 [% END %]
+	[% IF roles == 'recouvrement' %] [% recouvrementrole=1 %] 	 [% END %]
+	[% IF roles == 'recouvrementadmin' %] [% recouvrementadminrole=1 %] 	 [% END %]
+
+
+
+
+[% END %]
+
+
+
+	       	<!-- Faire apparaitre le menu prodige -->
+		[% FOREACH roles = session.user.roles %]
+			[% IF roles == 'user' %]
+				<li [% IF (request.path.search('accueil'))     %] class="active" [% END %] > <a href="[% request.uri_base %]/accueil">Accueil</a></li>
+		                <li [% IF (request.path.search('clients'))     %] class="active" [% END %] > <a href="[% request.uri_base %]/clients">Clients</a></li>
+		                <li [% IF (request.path.search('outils'))      %] class="active" [% END %] > <a href="[% request.uri_base %]/outils">Outils</a></li>
+                		<li [% IF (request.path.search('downloads'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/downloads">Downloads</a></li>
+		                <li [% IF (request.path.search('prelevement')) %] class="active" [% END %] > <a href="[% request.uri_base %]/prelevement">Prelevements</a></li>
+			[% END %]
+		[% END %]
+
+
+	       	<!-- Faire apparaitre le menu prodige -->
+		[% FOREACH roles = session.user.roles %]
+			[% IF roles == 'prodige' %]
+        	        <li [% IF (request.path.search('prodige'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/prodige">Prodige</a></li>
+			[% END %]
+		[% END %]
+
+		<!-- Faire apparaitre le menu ingenico -->
+		[% FOREACH roles = session.user.roles %]
+			[% IF roles == 'client.ingenico' %]
+        	        <li [% IF (request.path.search('export'))    %] class="active" [% END %] > <a href="[% request.uri_base %]/client/export">Export</a></li>
+			[% END %]
+		[% END %]
+		
+	 	<!-- Faire apparaitre le menu SAV -->
+		[% IF savrole == 1 %]
+        	        <li [% IF (request.path.search('dossier'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/sav/search">S.A.V.</a></li>
+		[% END %]
+
+	 	<!-- Faire apparaitre le menu SAVADMIN -->
+		[% IF savadminrole == 1 %]
+        	        <li [% IF (request.path.search('dossier'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/savadmin/savadmin">S.A.V. Admin</a></li>
+		[% END %]
+
+ 		<!-- Faire apparaitre le menu RECOUVREMENT -->
+		[% IF recouvrementrole == 1 %]
+        	        <li [% IF (request.path.search('dossier'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/recouvrement/search">Recouvrement</a></li>
+		[% END %]
+
+		<!-- Faire apparaitre le menu RECOUVREMENT ADMIN-->
+		[% IF recouvrementadminrole == 1 %]
+        	        <li [% IF (request.path.search('dossier'))   %] class="active" [% END %] > <a href="[% request.uri_base %]/recouvrementadmin/search">Admin Recouvrement</a></li>
+		[% END %]
+
+
+
+
+    </ul>
+[% IF savadmin == 1 %]
+    <form class="navbar-form navbar-left" role="search" method="post" action="[% request.uri_base %]/search">
+      <div class="form-group">
+        <input type="text" class="form-control" name="search" placeholder="Chercher">
+      </div>
+      <button type="submit" class="btn btn-default">Go</button>
+    </form>
+[% END %]
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+			<span class="glyphicon glyphicon-user">&nbsp;</span>
+			[% session.username | html %] <b class="caret"></b>&nbsp; &nbsp; &nbsp;
+		</a>
+
+        <ul class="dropdown-menu">
+	      <li><a href="[% request.uri_base %]/profil">Profil</a></li>
+
+           <!-- Faire apparaitre le menu Créer un compte pour admin -->   
+	  [% FOREACH roles = session.user.roles %]
+	       [% IF roles == 'admin' %]
+		      <li><a href="[% request.uri_base %]/admin/createaccount">[ Créer un Compte ]</a></li>
+		      <li><a href="[% request.uri_base %]/admin/manageaccount">[ Gérer les Comptes ]</a></li>
+	       [% END %]
+	  [% END %]
+
+              <li><a href="[% request.uri_base %]/password">Password</a></li>
+              <li><a href="[% request.uri_base %]/disconnect">Déconnexion</a></li>
+        </ul>
+
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+
+</nav>
+
+ </div>
+</div>
+
+
+[% END %]
+
+</header>
+
+<body>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Veuillez patienter</h4>
+      </div>
+      <div class="modal-body"><label id="modal-label"> Géneration du fichier</label><br>
+        <div class="progress progress-striped active">
+                <div class="progress-bar progress-bar-info" id="progressBar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+[% content %]
+
+<script src="[% request.uri_base %]/javascripts/jquery-1.8.3.min.js"></script>
+<script src="[% request.uri_base %]/bootstrap/js/bootstrap.min.js"></script>
+<script src="[% request.uri_base %]/javascripts/app.js"></script>
+
+
+<script>
+  $(document).ready(function()
+      {
+       $("#btn-login").show();
+	//alert("toto");
+      });
+</script>
+
+<br />
+<br />
+
+
+<footer>
+    <div class="footer">
+	<div class="row">
+	  <div class="col-6 col-sm-4 col-lg-4"></div>
+	  <div class="col-6 col-sm-4 col-lg-4"><small>Powered by <a href="http://www.slowfox.dance/">SlowFox && Dancer</a> [% dancer_version %] - [% perlVersion %]</small> </div>
+	  <div class="col-6 col-sm-4 col-lg-4"></div>
+	</div>
+    </div>
+
+</footer>
+
+
+</body>
+</html>

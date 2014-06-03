@@ -1,0 +1,53 @@
+<!-- BootStrap NavBar -->
+
+<!-- HEADER line -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+[% ####### Affichage des messages de warning pour le login  ####### %]
+[% IF show_warning %]
+      <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button> 
+      <strong>Gloup's! </strong> [% show_warning %]
+      </div>
+[% END %]
+
+[% IF show_success %]
+      <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Bravo ! </strong> [% show_success %]
+      </div>
+[% END %]
+
+        Hello, <span class="label label-warning">[% session.username | html %]</span>.
+        Your are connected on SlowFox using  Perl Dancer.
+
+
+      <br/>
+
+    </div>
+
+  </div>
+
+[% ### L'utilisateur est connecté j'affiche la page %] 
+[% IF session.username %]
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Version Beta</h1>
+  <p>this tool use Perl Dancer, Template Toolkit, Mysql, Bootstrap Twitter and jQuery... Asterisk Zioper</p>
+  <a href="http://www.youtube.com/watch?v=-HEIf2yP_P8"><div class="btn btn-primary btn-lg" role="button">SlowFox</div></a>
+</div>
+
+
+
+[% END %]
+
+
+
+</div>
+
+

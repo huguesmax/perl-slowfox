@@ -1,0 +1,59 @@
+.savSearch {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin: 15px 0;
+    padding: 39px 19px 14px;
+    position: relative;
+}
+
+#infoClient{
+display : none;
+}
+
+#telephone{
+display:none;
+}
+
+#btn-login{
+display : none;
+}
+#telephone{
+display : none;
+}
+#newinput{
+	display : none;
+}
+#newhotline{
+    display : none;
+}
+.parametre{
+    cursor: pointer;
+}
+
+textarea{
+width: 400px;
+}
+.encadrer{
+border : 1px;
+
+}
+
+.red {
+	background-color: red;
+}
+.bold {
+	font-weight:bold;
+}
+.green {
+    background-color: green;
+}
+.ajout1 {
+    border-color:#DDDDDD;
+    border-width:1px; 
+    border-style:solid; 
+    /*width: 150%;*/     
+}
+.blue-info{
+    background-color: #5268A6;
+}

@@ -1,0 +1,53 @@
+<!-- BootStrap NavBar -->
+
+<!-- HEADER line -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+[% ####### Affichage des messages de warning pour le login  ####### %]
+[% IF show_warning %]
+      <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button> 
+      <strong>Gloup's! </strong> [% show_warning %]
+      </div>
+[% END %]
+
+[% IF show_success %]
+      <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Bravo ! </strong> [% show_success %]
+      </div>
+[% END %]
+
+        Bonjour, <span class="label label-warning">[% session.username | html %]</span>.
+        Vous êtes bien connecté aux Outis de traitements automatiques de Money30.
+
+
+      <br/>
+
+    </div>
+
+  </div>
+
+[% ### L'utilisateur est connecté j'affiche la page %] 
+[% IF session.username %]
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Version Beta</h1>
+  <p>Cet outil est en version beta merci de remonter les bug à l'adminstrateur</p>
+  <p><div class="btn btn-primary btn-lg" role="button">Money30</div></p>
+</div>
+
+
+
+[% END %]
+
+
+
+</div>
+
+

@@ -1,0 +1,60 @@
+<!-- BootStrap NavBar -->
+
+<!-- HEADER line -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+[% ####### Affichage des messages de warning pour le login  ####### %]
+[% IF show_warning %]
+      <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button> 
+      <strong>Gloup's! </strong> [% show_warning %]
+      </div>
+[% END %]
+
+[% IF show_success %]
+      <div class="alert alert-success">
+	      <button type="button" class="close" data-dismiss="alert">&times;</button>
+	      <strong> [% show_success %]  </strong>
+      </div>
+[% END %]
+
+
+
+[% IF not session.username %]
+      Merci de contacer l'adminstrateur pour obtenir un Username et Mot de passe valide.
+
+[% END %]
+
+      <br/>
+
+    </div>
+
+  </div>
+
+[% ### L'utilisateur est connecté j'affiche la page %] 
+[% IF session.username %]
+<div class="well well-lg" > 
+	 <strong> @  </strong> [% session.username %]<br>
+	<span class="glyphicon glyphicon-user"> </span> [% prenom FILTER ucfirst %] [%  name FILTER upper %]      <br> <br> 
+	Vos roles:  [% roles %]      <br>
+</div>
+<div class="well well-sm">
+
+<h5> Adresse Ip de connexion: [% ip %] </h5>
+<h5> Navigateur Web:  [% userAgent %]  </h5> 
+		</div>
+[% show_info %] 
+
+
+
+[% END %]
+
+
+
+</div>
+
+

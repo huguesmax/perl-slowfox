@@ -1,0 +1,10 @@
+--- !!perl/hash:Dancer::Session::YAML
+id: 1483465026850244746402219255690151
+user:
+  error:
+    - you are not authorized
+    - your session may have ended
+  id: ~
+  login: ~
+  name: ~
+  roles: []

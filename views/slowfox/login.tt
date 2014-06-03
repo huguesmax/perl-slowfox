@@ -1,0 +1,61 @@
+<!-- BootStrap NavBar -->
+
+<!-- HEADER line -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="span6">
+<noscript>
+<div class="alert alert-danger">
+	Vous devez activer Javascript pour utiliser cette application ! 
+</div>
+</noscript>
+[% ### je n'affiche le formulaire de login que si je ne suis pas connecté #### %]
+[% IF not session.username %]
+      <form class="well form-inline" method="post"
+          action="[% request.uri_base %]/login">
+        <fieldset>
+          <legend>Connexion</legend>
+          <input type="email" class="input-large" name="username" data-provide="typeahead" autocomplete="on"
+              placeholder="Adresse Email" />
+          <input type="password" class="span2" name="password"
+              placeholder="Password">
+          <button type="submit" class="btn btn-primary" id="btn-login">Connexion</button>
+        </fieldset>
+      </form>
+[% END %]
+
+
+[% ####### Affichage des messages de warning pour le login  ####### %]
+[% IF show_warning %]
+      <div class="alert alert-danger">
+      		<button type="button" class="close" data-dismiss="alert">&times;</button> 
+      		<strong>Gloup's! </strong> [% show_warning %]
+      </div>
+[% END %]
+
+[% IF show_success %]
+      <div class="alert alert-success">
+	      <button type="button" class="close" data-dismiss="alert">&times;</button>
+	      <strong>Cool ! </strong> [% show_success %]
+      </div>
+[% END %]
+
+
+
+[% IF not session.username %]
+      Merci de contacer l'adminstrateur pour obtenir un Username et Mot de passe valide.
+
+[% ELSE %]
+        Bonjour, <span class="label label-warning">[% session.username | html %]</span>.
+        Vous êtes bien connecté aux Outis de traitements automatiques de Money30.
+
+[% END %]
+
+
+    </div>
+  </div>
+</div>
+
+
