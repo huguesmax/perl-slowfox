@@ -3,8 +3,8 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    NAME                => 'm30',
-    AUTHOR              => q{Hugues BOUHANA <hugues.bouhana@softalys.com>},
+    NAME                => 'SlowFox',
+    AUTHOR              => q{Hugues MaX <huguesmax@gmail.com>},
     VERSION_FROM        => 'lib/m30.pm',
     ABSTRACT            => 'Money 30 TOOLS',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
