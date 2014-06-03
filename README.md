@@ -1,5 +1,6 @@
  
 <pre>
+
  $$$$$$\  $$\                         $$$$$$$$\
  $$  __$$\ $$ |                        $$  _____|
  $$ /  \__|$$ | $$$$$$\  $$\  $$\  $$\ $$ |    $$$$$$\  $$\   $$\
@@ -8,24 +9,24 @@
  $$\   $$ |$$ |$$ |  $$ |$$ | $$ | $$ |$$ |   $$ |  $$ | $$  $$<
  \$$$$$$  |$$ |\$$$$$$  |\$$$$$\$$$$  |$$ |   \$$$$$$  |$$  /\$$\
   \______/ \__| \______/  \_____\____/ \__|    \______/ \__/  \__|
+
 </pre>
 
-## SlowFox Dance 2014 ( Version Française plus bas ) 
+## SlowFox Dance 2014
 > slow down your FireFox :-)
-
+> (Version Française plus bas.)
 
 created by Hugues MaX hugues@max4mail.com
 
 Based on Perl Dancer 1 [http://www.dancer.org](http://www.dancer.org)
-
 Directly Inspired from [http://cowbell.cancan.cshl.edu/](http://cowbell.cancan.cshl.edu/)
-
+Inspired from [perlmaven.com](http://perlmaven.com/getting-started-with-perl-dancer-on-digital-ocean)
 
 ## What is SlowFox ? ##
 
 SlowFox is a Dancer 1 application for your Entreprise - this is a collection of web
-pages pre formated to show you how to use and develop using 
-
+pages pre formated to show you how to use and develop using
+ 
 - [Perl](http://www.perl.org)
 - [Dancer framwork](http://perldancer.org/) 
 - [Mysql](http://www.mysql.com/)
@@ -34,11 +35,8 @@ pages pre formated to show you how to use and develop using
 - [JQuery](http://jquery.com/)   
 
 ## What I can do whith SlowFox ##
-
 As you want ( the world is not engouth ) I use SlowFox for my Job, I developpe a entreprise class software you manage some customers....
-
 ## How to Install SlowFox ##
-
 You need a modern distro as Redhat 6.X/Centos 6.x/Fedora or Debian 7 / Ubuntu 12/ 14
 
 
@@ -89,9 +87,7 @@ And
     cpanm Starman   DBD::mysql
 
 
-
 And Wait..... Cup of coffee Time....
-
 
 ## OK now we can start: ##
 
