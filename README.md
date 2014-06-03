@@ -33,10 +33,18 @@ You need a modern distro as Redhat 6.X/Centos 6.x/Fedora or Debian 7 / Ubuntu 12
 
     Debian/Ubuntu : sudo apt-get install Redis mysql-server mysql curl  
 
-Or
+Or Redhat/Centos/Fedora :
 
+in French    
+	
+	yum install 'Outils de développement' 
+	yum groupinstall 'Prise en charge Perl'
 
-    Redhat/Centos/Fedora : yum install Redis mysql-server mysql curl perl-ExtUtils*
+in English
+	yum install 'Development Tools'
+	yum install 'Perl tools' 
+	yum install Redis mysql-server mysql curl perl-ExtUtils* mysql-devel wget
+	
 
 Perl Dancer, SlowFox need lot of perl Module, the best way to install all this modules is to 
 use [Cpanminus](https://metacpan.org/pod/App::cpanminus).
