@@ -1,25 +1,14 @@
  
-<pre>
-
- $$$$$$\  $$\                         $$$$$$$$\
- $$  __$$\ $$ |                        $$  _____|
- $$ /  \__|$$ | $$$$$$\  $$\  $$\  $$\ $$ |    $$$$$$\  $$\   $$\
- \$$$$$$\  $$ |$$  __$$\ $$ | $$ | $$ |$$$$$\ $$  __$$\ \$$\ $$  |
-  \____$$\ $$ |$$ /  $$ |$$ | $$ | $$ |$$  __|$$ /  $$ | \$$$$  /
- $$\   $$ |$$ |$$ |  $$ |$$ | $$ | $$ |$$ |   $$ |  $$ | $$  $$<
- \$$$$$$  |$$ |\$$$$$$  |\$$$$$\$$$$  |$$ |   \$$$$$$  |$$  /\$$\
-  \______/ \__| \______/  \_____\____/ \__|    \______/ \__/  \__|
-
-</pre>
--
-## SlowFox Dance 2014 ##
+# SlowFox Dance 2014 #
 > slow down your FireFox :-)
 > (Version Française plus bas.)
 
-created by Hugues MaX hugues@max4mail.com
+created by Hugues MaX huguesmax[at]gmail.com
 
 Based on Perl Dancer 1 [http://www.dancer.org](http://www.dancer.org)
+
 Directly Inspired from [http://cowbell.cancan.cshl.edu/](http://cowbell.cancan.cshl.edu/)
+
 Inspired from [perlmaven.com](http://perlmaven.com/getting-started-with-perl-dancer-on-digital-ocean)
 
 ## What is SlowFox ? ##
@@ -42,12 +31,12 @@ You need a modern distro as Redhat 6.X/Centos 6.x/Fedora or Debian 7 / Ubuntu 12
 
 
 
-    Debian/Ubuntu : sudo apt-get install Redis mysql-server mysql curl
+    Debian/Ubuntu : sudo apt-get install Redis mysql-server mysql curl  
 
 Or
 
 
-    Redhat/Centos/Fedora : yum install Redis mysql-server mysql curl 
+    Redhat/Centos/Fedora : yum install Redis mysql-server mysql curl perl-ExtUtils*
 
 Perl Dancer, SlowFox need lot of perl Module, the best way to install all this modules is to 
 use [Cpanminus](https://metacpan.org/pod/App::cpanminus).
@@ -92,7 +81,11 @@ And Wait..... Cup of coffee Time....
 
 ## OK now we can start: ##
 
-download lastest version of slowfox
+cd /home
+
+[download lastest version of slowfox](https://github.com/huguesmax/perl-slowfox/archive/master.zip)
+
+
 
 
 
