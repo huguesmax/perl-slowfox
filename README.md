@@ -11,7 +11,7 @@
   \______/ \__| \______/  \_____\____/ \__|    \______/ \__/  \__|
 
 </pre>
-
+-
 ## SlowFox Dance 2014
 > slow down your FireFox :-)
 > (Version Française plus bas.)
@@ -35,7 +35,8 @@ pages pre formated to show you how to use and develop using
 - [JQuery](http://jquery.com/)   
 
 ## What I can do whith SlowFox ##
-As you want ( the world is not engouth ) I use SlowFox for my Job, I developpe a entreprise class software you manage some customers....
+As you want ( the world is not engouth ) I use SlowFox for my Job, I developpe a software to manage some customers....
+
 ## How to Install SlowFox ##
 You need a modern distro as Redhat 6.X/Centos 6.x/Fedora or Debian 7 / Ubuntu 12/ 14
 
