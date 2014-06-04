@@ -27,8 +27,7 @@ pages pre formated to show you how to use and develop using
 As you want ( the world is not engouth ) I use SlowFox for my Job, I developpe a software to manage some customers....
 
 ## How to Install SlowFox ##
-You need a modern distro as Redhat 6.X/Centos 6.x/Fedora or Debian 7 / Ubuntu 12/ 14
-
+You need a modern distro as Redhat 6.4/Centos 6.4/Fedora 18  ( or Debian 7 / Ubuntu 12/ 14 not yet tester) 
 
 
     Debian/Ubuntu : sudo apt-get install Redis mysql-server mysql curl  
@@ -37,7 +36,6 @@ Or Redhat/Centos/Fedora :
 
 	yum -y groupinstall development && yum -y groupinstall perl-runtine
 	yum -y install Redis mysql-server mysql curl perl-ExtUtils* mysql-devel wget perl-IO-Socket-SSL 	
-	perl-IO-Socket-SSL
 	
 
 Perl Dancer, SlowFox need lot of perl Module, the best way to install all this modules is to 
