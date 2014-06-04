@@ -74,17 +74,68 @@ And Wait..... Cup of coffee Time....
 
 
 
-cd /home
+    cd /home
 
-wget https://github.com/huguesmax/perl-slowfox/archive/master.zip -O slowfox.zip
+    wget https://github.com/huguesmax/perl-slowfox/archive/master.zip -O slowfox.zip
 
-unzip slowfox.zip
+    unzip slowfox.zip
 
-cd perl-slowfox-master
-
-
+    cd perl-slowfox-master
 
 
+## load mysql data ##
+
+
+    service mysqld start	[OK]
+    
+    mysql
+	mysql> create database slowfox;
+	Query OK, 1 row affected (0.00 sec) 
+
+    
+    mysql> \quit
+	Bye
+
+    mysql slowfox < doc/slowfox.sql
+
+
+## Stop Default Firewall && apache ##
+
+If you have default install, firewall will block all connections. ( do that only on your dev server )
+
+    service iptables stop		[OK]
+    service httpd stop                  [OK]
+
+## first step dance. ##
+
+get you IP:
+
+    ifconfig eth0
+    eth0      Link encap:Ethernet  HWaddr 00:0C:29:5A:9C:1C
+              inet adr:192.168.0.37  Bcast:192.168.0.255  Masque:255.255.255.0
+
+
+    ./bin/app.pl --port 80
+
+    [31482]  core @0.000012> loading Dancer::Handler::Standalone handler in /usr/local/share/perl5/Dancer/Handler.pm l. 45
+    [31482]  core @0.000245> loading handler 'Dancer::Handler::Standalone' in /usr/local/share/perl5/Dancer.pm l. 483
+    >> Dancer 1.3124 server 31482 listening on http://0.0.0.0:80
+    >> Dancer::Plugin::Auth::RBAC::Credentials::MySQL (1.110720)
+    >> Dancer::Plugin::Auth::RBAC (1.110720)
+    >> Dancer::Plugin::Auth::RBAC::Credentials (1.110720)
+    >> Dancer::Plugin::Database::Core (0.06)
+    >> Dancer::Plugin::Database::Core::Handle (0.02)
+    >> Dancer::Plugin::Database (2.09)
+    >> Dancer::Plugin::Auth::RBAC::Permissions (1.110720)
+    >> Dancer::Plugin::Ajax (1.00)
+    >> Dancer::Plugin::Auth::RBAC::Permissions::Config (1.110720)
+    >> Dancer::Plugin::Email (1.0201)
+    == Entering the development dance floor ...
+
+
+Please go to http://192.168.0.37  ( replace 192.168.0.37 by your ip address )
+	
+   
 
 
 
@@ -101,4 +152,7 @@ cd perl-slowfox-master
 
 
 
- 
+
+
+
+
