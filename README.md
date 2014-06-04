@@ -35,8 +35,9 @@ You need a modern distro as Redhat 6.X/Centos 6.x/Fedora or Debian 7 / Ubuntu 12
 
 Or Redhat/Centos/Fedora :
 
-	yum groupinstall development && yum groupinstall perl-runtine
-	yum install Redis mysql-server mysql curl perl-ExtUtils* mysql-devel wget
+	yum -y groupinstall development && yum -y groupinstall perl-runtine
+	yum -y install Redis mysql-server mysql curl perl-ExtUtils* mysql-devel wget perl-IO-Socket-SSL 	
+	perl-IO-Socket-SSL
 	
 
 Perl Dancer, SlowFox need lot of perl Module, the best way to install all this modules is to 
@@ -60,8 +61,8 @@ You can use also yum or apt-get.
 
     
     cpanm Dancer YAML Template JSON Redis Dancer::Session::Redis   Dancer::Plugin::Email Dancer::Plugin::Database
-    Dancer::Plugin::Auth::RBACCrypt::Eksblowfish::Bcrypt DateTime::Format::Strptime Tie::IxHash Spreadsheet::ParseExcel
-    Spreadsheet::WriteExcel Modern::Perl DateTime::Format::MySQL   DateTime::Format::Duration Dancer::Plugin::Redis
+    Dancer::Plugin::Auth::RBAC Crypt::Eksblowfish::Bcrypt DateTime::Format::Strptime Tie::IxHash Modern::Perl 	   
+    DateTime::Format::MySQL   DateTime::Format::Duration Dancer::Plugin::Redis
     HTML::Strip Daemon::Control Net::Server
 
 And
