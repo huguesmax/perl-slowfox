@@ -30,9 +30,7 @@ As you want ( the world is not engouth ) I use SlowFox for my Job, I developpe a
 You need a modern distro as Redhat 6.4/Centos 6.4/Fedora 18  ( or Debian 7 / Ubuntu 12/ 14 not yet tester) 
 
 
-    Debian/Ubuntu : sudo apt-get install Redis mysql-server mysql curl  
-
-Or Redhat/Centos/Fedora :
+Redhat/Centos/Fedora :
 
 	yum -y groupinstall development && yum -y groupinstall perl-runtine
 	yum -y install Redis mysql-server mysql curl perl-ExtUtils* mysql-devel wget perl-IO-Socket-SSL 	
@@ -47,18 +45,11 @@ As root user
 
     curl -L http://cpanmin.us | perl - App::cpanminus
 
-for Debian/Ubuntu
-
-
-    curl -L http://cpanmin.us | perl - --sudo App::cpanminus
-
-
-
 You can use also yum or apt-get.
 
 
     
-    cpanm Dancer YAML Template JSON Redis Dancer::Session::Redis   Dancer::Plugin::Email Dancer::Plugin::Database
+    cpanm Dancer YAML Template JSON Redis Dancer::Session::Redis Dancer::Plugin::Database
     Dancer::Plugin::Auth::RBAC Crypt::Eksblowfish::Bcrypt DateTime::Format::Strptime Tie::IxHash Modern::Perl 	   
     DateTime::Format::MySQL   DateTime::Format::Duration Dancer::Plugin::Redis
     HTML::Strip Daemon::Control Net::Server
@@ -66,7 +57,7 @@ You can use also yum or apt-get.
 And
 
 
-    cpanm Server::Starter
+    cpanm Server::Starter Dancer::Plugin::Email
 
 And
 
@@ -81,11 +72,15 @@ And Wait..... Cup of coffee Time....
 
 ## OK now we can start: ##
 
+
+
 cd /home
 
-[download lastest version of slowfox](https://github.com/huguesmax/perl-slowfox/archive/master.zip)
+wget https://github.com/huguesmax/perl-slowfox/archive/master.zip -O slowfox.zip
 
+unzip slowfox.zip
 
+cd perl-slowfox-master
 
 
 
