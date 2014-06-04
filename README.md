@@ -35,14 +35,7 @@ You need a modern distro as Redhat 6.X/Centos 6.x/Fedora or Debian 7 / Ubuntu 12
 
 Or Redhat/Centos/Fedora :
 
-in French    
-	
-	yum install 'Outils de développement' 
-	yum groupinstall 'Prise en charge Perl'
-
-in English
-	yum install 'Development Tools'
-	yum install 'Perl tools' 
+	yum groupinstall development && yum groupinstall perl-runtine
 	yum install Redis mysql-server mysql curl perl-ExtUtils* mysql-devel wget
 	
 
