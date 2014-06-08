@@ -53,7 +53,7 @@ Redhat/Centos/Fedora :
 
 Debian/buntu :
 
-	apt-get install libmodule-install-perl redis-server mysql-server make curl libmysqlclient-dev wget libio-socket-ssl-perl libnet-ssleay-perl libssl-dev
+	apt-get install libmodule-install-perl redis-server mysql-server make curl libmysqlclient-dev wget libio-socket-ssl-perl libnet-ssleay-perl libssl-dev starman
 
 
 SlowFOX a besoin de Perl Dancer et de pas mal de modules Perl. Le + simple c'est installer 
@@ -84,11 +84,11 @@ et
     
 et
 
-    cpanm Net::Server::SS::PreFork
+    cpanm Net::Server::SS::PreFork DBD::mysql
 
-et
+et pour Centos/RedHat/Fedora
 
-    cpanm Starman DBD::mysql
+    cpanm Starman
 
 
 Bon, ça va être long...vous pouvez aller prendre un café
