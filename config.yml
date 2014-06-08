@@ -192,8 +192,8 @@ PATHFILES : '/home/slowfox/public/files'
 
 #redis_session:
 #      server: '127.0.0.1:6379'
-      #password: 'Aemah3aiSahji5PoyeKae0maPhoo7oChOhK8ieyu'
-#      database: 1
-#      expire: 14400
-#      debug: 0 
-#      ping: 5
+     #password: 'Aemah3aiSahji5PoyeKae0maPhoo7oChOhK8ieyu'
+     #      database: 0 
+     # expire: 14400
+     # debug: 0 
+     # ping: 5

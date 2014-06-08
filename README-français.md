@@ -12,8 +12,8 @@ Librement inspiré de [perlmaven.com](http://perlmaven.com/getting-started-with-
 
 ## SlowFOX c'est quoi ? ##
 
-SlowFOX is une application web pour les entreprises  développé avec le framwork Perl  Dancer  en version 1.
-Pour le moment c'est une collection de page web pré formatées avec ces outils
+SlowFOX is une application web pour les entreprises développée avec le framwork Perl  Dancer  en version 1.
+Pour le moment c'est une collection de page web pré formatées avec ces outils librement intégrés
  
 - [Perl](http://www.perl.org)
 - [Dancer framwork](http://perldancer.org/) 
@@ -26,15 +26,15 @@ Pour le moment c'est une collection de page web pré formatées avec ces outils
 
 ## Pourquoi le nom de slowFOX ? ##
 
-voir les vidéos de la dance  [SlowFOX](https://www.google.com/webhp?output=googleabout&gws_rd=ssl#q=slowfox)
+voir les vidéos de la danse  [SlowFOX](https://www.google.com/webhp?output=googleabout&gws_rd=ssl#q=slowfox)
 
-c'est rigolo....
+en + c'est rigolo....
 
 
 ## Mais je fais QUOI avec SlowFOX  ##
 
 Ben.. c'est a vous de voir, mais mois ça me sert pour la construction d'intranet pour des entreprises 
-(ou des applications métiers pour faire mieux ... )
+(ou des applications métiers, c'est + la classe ... :-)
 
 
 ## Comment installer slowFOX ##
@@ -42,7 +42,8 @@ Ben.. c'est a vous de voir, mais mois ça me sert pour la construction d'intrane
 Vous avez besoin d'un linux récent basé sur ( Redhat 6.4/Centos 6.4/Fedora 18 ou  Debian 7 / Ubuntu 12/ 14 ) 
 
 
-La documentation par d'une installation minimale Centos ou Debian, il est possible de ne pas avoir besoin d'installer tout.
+Pour la documentation, on part d'une installation minimale Centos ou Debian, il est possible de ne pas avoir besoin de tout installer.
+Il ce peut que l'installation échoue - il ne faut pas paniquer c'est souvent un problème de bibiliothèque de developpement manquantes.
 
 
 Redhat/Centos/Fedora :
@@ -55,12 +56,12 @@ Debian/buntu :
 	apt-get install libmodule-install-perl redis-server redis-doc mysql-server curl libmysqlclient-dev wget libio-socket-ssl-perl libnet-ssleay-perl libssl-dev
 
 
-SlowFOX a besoin de Perl Dancer et de pas mal de module Perl. Le + simple c'est installer 
+SlowFOX a besoin de Perl Dancer et de pas mal de modules Perl. Le + simple c'est installer 
 
 [cpanminus](http://search.cpan.org/dist/App-cpanminus/lib/App/cpanminus.pm)
 
  
-En tant que root ( ajouter sudo pour les "debianistes" )
+En tant que root ( ajouter sudo pour les "debianistes"  || les "ubuntuistes" )
 
 
     curl -L http://cpanmin.us | perl - App::cpanminus
@@ -88,7 +89,7 @@ et
     cpanm Starman DBD::mysql
 
 
-Bon, ça va être long...vous pouvez prendre un café
+Bon, ça va être long...vous pouvez aller prendre un café
 
 ## Maintenant on peut démarrer ##
 
@@ -103,7 +104,7 @@ Bon, ça va être long...vous pouvez prendre un café
     cd perl-slowfox-master
 
 
-## Crée la base de données et charger les données ##
+## Créer la base de données et charger les données ##
 
 
     service mysqld start	[OK]
@@ -116,11 +117,11 @@ Bon, ça va être long...vous pouvez prendre un café
     mysql> \quit
 	Bye
 
-Charger la base mysql  ( pour le moment il y a seulement 2 tables: users and voip)
+Charger la base MySQL  ( pour le moment il y a seulement 2 tables: users and voip)
 
     mysql slowfox < doc/slowfox.sql
 
-Pour le moment nous utiliserons le login et mot de passe par default
+Nous utiliserons le login et mot de passe par default
 
 
 login: root
@@ -144,11 +145,12 @@ tester la connexion
     mysql>
 
 
-Si vous souhaitez mettre un mot de passe  ( c'est mieux.... :-)  )
+Si vous souhaitez mettre un mot de passe  ( c'est mieux.... :-)  ) voir la doc de 
 
 [MySQL](http://dev.mysql.com/doc/refman/5.0/fr/set-password.html)
 
 et 
+
 éditer le fichier config.yml, aller cette section
 
 	plugins:
@@ -172,7 +174,7 @@ et
 
 et modifier le username et password par celui de votre choix
 
-Attention c'est un fichier [YAML](http://en.wikipedia.org/wiki/YAML), les espaces, les tabultations tout est important 
+Attention c'est un fichier [YAML](http://en.wikipedia.org/wiki/YAML), les espaces, les tabultations tout est important.
 
 
 ## Arreter le firewall et serveur web Linux  lancé par default  ##
@@ -182,7 +184,7 @@ il faut lancer ces commandes. ( A NE PAS FAIRE SUR VOTRE SERVEUR DE PRODUCTION )
     service iptables stop    [OK]
     service httpd stop       [OK]
 
-## Les premiers pas de danse. ##
+## Mes premiers pas de danse. ##
 
 Il me faut votre IP:
 
@@ -194,7 +196,7 @@ Il me faut votre IP:
 
 dans cet exemple j'ai 192.168.0.37
 
-lancer Perl Dancer, sur le port 80 ( par default on utilise le port 3000 )
+lancer Perl Dancer, sur le port 80 ( par default il demarrera sur le port 3000  si on ne passe aucune option)
 
 
     ./bin/app.pl --port 80
@@ -223,11 +225,80 @@ Login & Mot de passe par defaut:
 
 **pwd: admin**	
 
+^C to stop dancer
 
 
-   
+## Comment utiliser Redis ? ##
+
+[Redis](http://redis.io/)  est un serveur de clef/Valeur très rapide.
+
+Il est utiliser pour stocker les informations de la session de vos utilisateurs. Il permet de commencer
+a préparer la haute disponibilité de votre application en partagant ces infos de session sur plusieurs serveurs.
 
 
+Redis
+
+    yum install Redis on redhat/Centos
+
+Ou
+    apt-get install redis on Debian/Ubuntu
+
+ajouter le module Perl:
+
+    cpanm Dancer::Session::Redis
+
+Ajouter
+
+    vm.overcommit_memory = 1 à /etc/sysctl.conf
+
+ou
+
+    sysctrl -w vm.overcommit_memory=1
+
+
+    chkconfig redis on (redhat/Centos)
+
+
+redis.conf is in slowfox/doc/redis.conf
+
+
+Le mot de passe Redis n'est pas vraiment nécessaire sur un serveur de dev.
+
+Décommenté cette section à la fin du fichier config.yml
+
+
+
+     redis_session:
+         server: '127.0.0.1:6379'
+         #password: 'Aemah3aiSahji5PoyeKae0maPhoo7oChOhK8ieyu'
+         database: 0
+         expire: 14400
+         debug: 0
+         ping: 5
+
+
+
+Vérifier que redis fonctionne
+
+     [root@slowfox]# redis-cli
+     redis 127.0.0.1:6379>
+
+
+
+arreter et démarrer 
+
+     ^C
+
+     ./bin/appl.pl --port=80
+
+
+Si vous avez cette erreur c'est que la connexion n'est pas correcte , vérifié votre configuration
+
+
+     [root@slowfox]# ./bin/app.pl --port=80
+     Could not connect to Redis server at 127.0.0.1:6379: Connexion refused at /usr/local/share/perl5/Dancer/Session/Redis.pm line 109.
+            ...propagated at /usr/local/share/perl5/Redis.pm line 587.
+     BEGIN failed--compilation aborted at ./bin/app.pl line 2.
 
 
 
