@@ -67,8 +67,8 @@ plugins:
                           database: 'slowfox'
                           host:     'localhost'
                           port:     3306
-                          username: 'admin'
-                          password: 'eliott'
+                          username: 'root'
+                          password: ''
                           connection_check_threshold: 10
                           dbi_params:
                                       RaiseError: 1

@@ -1,15 +1,15 @@
  
-# SlowFox Dance 2014 #
+# SlowFox Dance  #
 > slow down your FireFox :-)
-> (Version Française plus bas.)
+> (Version Française README-français.md.)
 
 created by Hugues MaX huguesmax[at]gmail.com
 
 Based on Perl Dancer 1 [http://www.dancer.org](http://www.dancer.org)
 
-Directly Inspired from [http://cowbell.cancan.cshl.edu/](http://cowbell.cancan.cshl.edu/)
+Freely Directly Inspired from [http://cowbell.cancan.cshl.edu/](http://cowbell.cancan.cshl.edu/)
 
-Inspired from [perlmaven.com](http://perlmaven.com/getting-started-with-perl-dancer-on-digital-ocean)
+Freely Inspired from [perlmaven.com](http://perlmaven.com/getting-started-with-perl-dancer-on-digital-ocean)
 
 ## What is SlowFox ? ##
 
@@ -23,6 +23,7 @@ pages pre formated to show you how to use and develop using
 - [Twitter Bootstrap](http://getbootstrap.com/)
 - [JQuery](http://jquery.com/)   
 
+
 ## What I can do whith SlowFox ##
 As you want ( the world is not engouth ) I use SlowFox for my Job, I developpe a software to manage some customers....
 
@@ -34,7 +35,10 @@ Redhat/Centos/Fedora :
 
 	yum -y groupinstall development && yum -y groupinstall perl-runtine
 	yum -y install Redis mysql-server mysql curl perl-ExtUtils* mysql-devel wget perl-IO-Socket-SSL 	
-	
+
+Debian/buntu :
+
+	apt-get install libmodule-install-perl redis-server redis-doc mysql-server curl libmysqlclient-dev wget libio-socket-ssl-perl libnet-ssleay-perl libssl-dev
 
 Perl Dancer, SlowFox need lot of perl Module, the best way to install all this modules is to 
 use [Cpanminus](https://metacpan.org/pod/App::cpanminus).
@@ -57,15 +61,16 @@ You can use also yum or apt-get.
 And
 
 
-    cpanm Server::Starter Dancer::Plugin::Email
-
+    cpanm Server::Starter 
+    
+    
 And
 
     cpanm Net::Server::SS::PreFork
 
 And
 
-    cpanm Starman   DBD::mysql
+    cpanm Starman DBD::mysql
 
 
 And Wait..... Cup of coffee Time....
@@ -73,7 +78,7 @@ And Wait..... Cup of coffee Time....
 ## OK now we can start: ##
 
 
-
+** clone it **
     cd /home
 
     wget https://github.com/huguesmax/perl-slowfox/archive/master.zip -O slowfox.zip
@@ -96,15 +101,71 @@ And Wait..... Cup of coffee Time....
     mysql> \quit
 	Bye
 
+Load default database ( there are only 2 tables users and voip)
+
     mysql slowfox < doc/slowfox.sql
+
+login and password for database is default mysql instal
+
+
+login: root
+and there are no password
+
+test with this command
+
+[root@LocalVM ~]# mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 5.5.31-log MySQL Community Server (GPL) by Remi
+
+Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+
+
+if you want to add mysql password ( little bit more secure... :-)  )
+
+[MySQL](http://dev.mysql.com/doc/refman/5.0/fr/set-password.html)
+
+and 
+edit config.yml, this section
+
+	plugins:
+	    Database:
+	        connections:
+        	           slowfox:
+	                          driver:   'mysql'
+	                          database: 'slowfox'
+	                          host:     'localhost'
+	                          port:     3306
+	                          username: 'root'
+	                          password: ''
+        	                  connection_check_threshold: 10
+	                          dbi_params:
+	                                      RaiseError: 1
+	                                      AutoCommit: 1
+	                                      mysql_enable_utf8 : 1
+        	                              charset: utf8
+
+
+
+and replace password by your password
+
+BECAREFULL this is [YAML](http://en.wikipedia.org/wiki/YAML) file, space and tab are not the same think...
 
 
 ## Stop Default Firewall && apache ##
 
-If you have default install, firewall will block all connections. ( do that only on your dev server )
+If you have default RedHat/Centos/Fedora install, firewall will block all connections. ( do that only on your dev server )
 
-    service iptables stop		[OK]
-    service httpd stop                  [OK]
+    service iptables stop    [OK]
+    service httpd stop       [OK]
 
 ## first step dance. ##
 
@@ -113,6 +174,12 @@ get you IP:
     ifconfig eth0
     eth0      Link encap:Ethernet  HWaddr 00:0C:29:5A:9C:1C
               inet adr:192.168.0.37  Bcast:192.168.0.255  Masque:255.255.255.0
+
+
+
+for me this us 192.168.0.37
+
+launch dancer app
 
 
     ./bin/app.pl --port 80
@@ -134,7 +201,10 @@ get you IP:
 
 
 Please go to http://192.168.0.37  ( replace 192.168.0.37 by your ip address )
-	
+
+default login/password
+login: admin@admin.fr
+pwd: admin	
    
 
 
