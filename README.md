@@ -2,7 +2,7 @@
 # SlowFox Dance  #
 > slow down your FireFox :-)
 
-> (Version Française README-français.md.)
+> (Pour la version Française, lire le fichier README-français.md.)
 
 created by Hugues MaX huguesmax[at]gmail.com
 
@@ -204,12 +204,11 @@ launch dancer app
 Please go to http://192.168.0.37  ( replace 192.168.0.37 by your ip address )
 
 default login/password
-**
-login: admin@admin.fr
 
-pwd: admin	
+**login: admin@admin.fr**
 
-**
+**pwd: admin**	
+
 
 
    
