@@ -44,7 +44,7 @@ Redhat/Centos/Fedora :
 
 Debian/buntu :
 
-	apt-get install libmodule-install-perl redis-server redis-doc mysql-server curl libmysqlclient-dev wget libio-socket-ssl-perl libnet-ssleay-perl libssl-dev
+	apt-get install libmodule-install-perl redis-server make mysql-server curl libmysqlclient-dev wget libio-socket-ssl-perl libnet-ssleay-perl libssl-dev
 
 Perl Dancer, SlowFOX need lot of perl Module, the best way to install all this modules is to 
 use [Cpanminus](https://metacpan.org/pod/App::cpanminus).
@@ -59,10 +59,7 @@ Use cpanminus to intall all modules:
 
 
     
-    cpanm Dancer YAML Template JSON Redis Dancer::Session::Redis Dancer::Plugin::Database
-    Dancer::Plugin::Auth::RBAC Crypt::Eksblowfish::Bcrypt DateTime::Format::Strptime Tie::IxHash Modern::Perl 	   
-    DateTime::Format::MySQL   DateTime::Format::Duration Dancer::Plugin::Redis
-    HTML::Strip Daemon::Control Net::Server
+    cpanm Dancer YAML Template JSON Redis Dancer::Session::Redis Dancer::Plugin::Database  Dancer::Plugin::Auth::RBAC Crypt::Eksblowfish::Bcrypt DateTime::Format::Strptime Tie::IxHash Modern::Perl  DateTime::Format::MySQL  DateTime::Format::Duration Dancer::Plugin::Redis  HTML::Strip Daemon::Control Net::Server
 
 And
 
@@ -283,6 +280,7 @@ If you have this error , check you redis config
 
 
 
+Voila...c'est tout pour aujourd'hui
 
 
 

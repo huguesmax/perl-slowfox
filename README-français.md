@@ -53,12 +53,14 @@ Redhat/Centos/Fedora :
 
 Debian/buntu :
 
-	apt-get install libmodule-install-perl redis-server redis-doc mysql-server curl libmysqlclient-dev wget libio-socket-ssl-perl libnet-ssleay-perl libssl-dev
+	apt-get install libmodule-install-perl redis-server mysql-server make curl libmysqlclient-dev wget libio-socket-ssl-perl libnet-ssleay-perl libssl-dev
 
 
 SlowFOX a besoin de Perl Dancer et de pas mal de modules Perl. Le + simple c'est installer 
 
 [cpanminus](http://search.cpan.org/dist/App-cpanminus/lib/App/cpanminus.pm)
+
+En plus on aura des versions récentes.
 
  
 En tant que root ( ajouter sudo pour les "debianistes"  || les "ubuntuistes" )
@@ -292,7 +294,7 @@ arreter et démarrer
      ./bin/appl.pl --port=80
 
 
-Si vous avez cette erreur c'est que la connexion n'est pas correcte , vérifié votre configuration
+Si vous avez cette erreur c'est que la connexion avec Redis n'est pas correcte , vérifier votre configuration
 
 
      [root@slowfox]# ./bin/app.pl --port=80
@@ -300,6 +302,8 @@ Si vous avez cette erreur c'est que la connexion n'est pas correcte , vérifié 
             ...propagated at /usr/local/share/perl5/Redis.pm line 587.
      BEGIN failed--compilation aborted at ./bin/app.pl line 2.
 
+
+Voila...c'est tout pour aujourd'hui
 
 
 
