@@ -1,6 +1,7 @@
  
 # SlowFox Dance  #
 > slow down your FireFox :-)
+
 > (Version Française README-français.md.)
 
 created by Hugues MaX huguesmax[at]gmail.com
@@ -49,7 +50,7 @@ As root user
 
     curl -L http://cpanmin.us | perl - App::cpanminus
 
-You can use also yum or apt-get.
+Use cpanminus to intall all modules:
 
 
     
@@ -88,7 +89,7 @@ And Wait..... Cup of coffee Time....
     cd perl-slowfox-master
 
 
-## load mysql data ##
+## Create database & Load MySQL data ##
 
 
     service mysqld start	[OK]
@@ -111,22 +112,22 @@ login and password for database is default mysql instal
 login: root
 and there are no password
 
-test with this command
+test mysql with this command
 
-[root@LocalVM ~]# mysql -u root
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 15
-Server version: 5.5.31-log MySQL Community Server (GPL) by Remi
+    [root@LocalVM ~]# mysql -u root
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 15
+    Server version: 5.5.31-log MySQL Community Server (GPL) by Remi
+    
+    Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+    
+    Oracle is a registered trademark of Oracle Corporation and/or its
+    affiliates. Other names may be trademarks of their respective
+    owners.
 
-Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql>
+    mysql>
 
 
 if you want to add mysql password ( little bit more secure... :-)  )
@@ -167,7 +168,7 @@ If you have default RedHat/Centos/Fedora install, firewall will block all connec
     service iptables stop    [OK]
     service httpd stop       [OK]
 
-## first step dance. ##
+## First step dance. ##
 
 get you IP:
 
@@ -203,8 +204,14 @@ launch dancer app
 Please go to http://192.168.0.37  ( replace 192.168.0.37 by your ip address )
 
 default login/password
+**
 login: admin@admin.fr
+
 pwd: admin	
+
+**
+
+
    
 
 
