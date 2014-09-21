@@ -209,7 +209,7 @@ default login/password
 
 **login: admin@admin.fr**
 
-**pwd: admin**	
+**passwor: admin**	
 
 
 ^C to stop ./bin/app.pl
