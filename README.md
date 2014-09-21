@@ -210,7 +210,7 @@ default login/password
 **login: admin@admin.fr**
 
 **password: admin**	
-test
+Atest
 
 ^C to stop ./bin/app.pl
 
