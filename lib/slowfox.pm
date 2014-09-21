@@ -11,14 +11,14 @@ use Dancer::Plugin::Auth::RBAC;				# Gestion des Access ( Role Base Access )
 use Dancer::Plugin::Auth::RBAC::Credentials::MySQL;	# RBAC MySQL
 use Crypt::Eksblowfish::Bcrypt;		         	# Encodage et salage des mots de passes
 #use Dancer::Plugin::I18N;                              #Intenationalization for Dancer
-#use experimental 'smartmatch';				# cpanm experimental and uncomment if you have warings
+#use experimental 'smartmatch';				# cpanm experimental and uncomment if you have warnings
 
 
 use admin::admin;		        # Page d'admin du site
 use slowfox::menu;			# Page accueil
 
 
-our $VERSION        = '0.11';
+our $VERSION        = '0.12';
 my $sessionDuration = 14400;	       # Durée des sessions en secondes = 4h
 my $dbname          = config->{'DBNAME'};
 
@@ -81,8 +81,11 @@ post '/login' => sub {
 				redirect params->{path} || '/accueil';
 
         } else {
-		debug "Connexion Failed pour User: ". params->{username} ." Password: ". params->{password} . " Disable: ". $statut->{disable};
-		if ( $statut->{disable} == 0 ) { 
+		debug "Connexion Failed pour User: ", params->{username} if params->{username};
+		debug "Password: ", params->{password}                   if  params->{password}; 
+		debug "Disable: ",  $statut->{disable}                   if $statut->{disable}; 
+		
+		if ( $statut->{disable} && $statut->{disable} == 0 ) { 
 			return template 'slowfox/login' => {
         	                         show_warning => " Désolé Mauvais Login ou Mauvais Mot de passe, Merci de contacter l'adminstrateur !! ",
                 	                };
@@ -273,71 +276,15 @@ any  '/search' => sub {
 	  	my $search = params->{search};
 		
 		if (! $search ) {
-			  return template 'slowfox/result' => {
+			  return template 'slowfox/search' => {
 	                                                       show_warning => "Désolé il n'y a pas de réponses",
+		          };
+		} else {
+	 		  return template 'slowfox/search' => {
+	                                                       show_success => "Désolé,il n'y a pas de réponses, c'est un demo...",
 		          };
 		}
 
-		#SEARCH FOR INGENICO BNP ONLY
-		#############################
-		my ( @resultC, @resultNom, @resultCC );
-		my $motif;
-
-		if ( $auth->asa('client.ingenico') ) {
-		    if ( $search =~/^BNP/i) {
-                       @resultCC  = database($dbname)->quick_select('ClientContrat', { NumContrat => { like => "$search%" } }, { limit => 10 } );
-		       $motif=0;
-		    } else {
-		       @resultCC  = database($dbname)->quick_select('ClientContrat', { CodeClient => { like => "%$search%" }, NumContrat =>{ like =>"BNP%"}   }, { limit => 10 } );
-		       $motif=1;
-   		    }		       
-
-			if ( @resultCC ) { 
-				  return template 'client/result' => {
-						     resultCC  => \@resultCC,
-						     motif     => $motif,
-				                     show_success => "Voici les resultats possibles ",
-			           };
-
-		
-			} else {
-				  return template 'client/result' => {
-	                                                            show_warning => "Désolé il n'y a pas de réponses",
-				                                     };
-		        }
-		}
-
-
-		#SEARCH ALL USERS 
-		#########################
-	
-		if ( $auth->asa('user')) {
-			my $sql =qq/SELECT Client.CodeClient as CC, Client.NomClient,Client.Ville, ClientContrat.NumContrat FROM Client INNER JOIN  ClientContrat 
-			          ON (Client.CodeClient = ClientContrat.CodeClient) 
-				  WHERE Client.CodeClient LIKE ? LIMIT 10/;
-
-			@resultCC  = database($dbname)->quick_select('ClientContrat', { NumContrat => { 'like' => "%$search%" } }, { limit => 10 } );
-			
-			$search ='%'. $search. '%';
-			my $sth = database($dbname)->prepare($sql);
-			$sth->execute($search);
-			#@resultC = $sth->fetchall_arrayref;
-
-	       		 if ( @resultCC ) { 
-				  return template 'slowfox/result' => {
-					  	     resultC      => $sth->fetchall_arrayref({}),
-						     resultCC     => \@resultCC,
-						     resultNom    => \@resultNom,
-				                     show_success => "Voici les resultats possibles ",
-			           };
-
-		
-			} else {
-				  return template 'slowfox/result' => {
-	                                                            show_warning => "Désolé il n'y a pas de réponses",
-				                                     };
-		        }
-		}	
 };
 
 

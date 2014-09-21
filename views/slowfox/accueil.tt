@@ -38,8 +38,8 @@
 <br />
 <div class="jumbotron">
   <h1>Version Beta</h1>
-  <p>this tool use Perl Dancer, Template Toolkit, Mysql, Bootstrap Twitter and jQuery... Asterisk Zioper</p>
-  <a href="http://www.youtube.com/watch?v=-HEIf2yP_P8"><div class="btn btn-primary btn-lg" role="button">Dance SlowFox</div></a>
+  <p>This tool use Perl Dancer ( and lot of module ), Template Toolkit, Mysql, Bootstrap Twitter and jQuery... Asterisk Zioper plug-in</p>
+  <a href="http://www.youtube.com/watch?v=-HEIf2yP_P8"><div class="btn btn-primary btn-lg" role="button">SlowFox Dance</div></a>
 </div>
 
 
