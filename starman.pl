@@ -14,8 +14,7 @@ lsb_sdesc => 'Starman Short',
 lsb_desc => 'Starman controls the web sites.',
 path => abs_path($0),
  
-#program => '/usr/local/bin/starman',
-program => '/root/.plenv/versions/5.18.0/bin/starman',
+program => '/usr/local/bin/starman',
 program_args => [ '--workers', '10', './bin/app.pl' ],
  
 user => 'starman',
