@@ -1,0 +1,137 @@
+2014/10/19-13:20:36 Starman::Server (type Net::Server::PreFork) starting! pid(2720)
+Resolved [*]:5000 to [0.0.0.0]:5000, IPv4
+Binding to TCP port 5000 on host 0.0.0.0 with IPv4
+Setting gid to "501 501 0 1 2 3 4 6 10"
+[2730]  core @0.000093> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2727]  core @0.000108> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2729]  core @0.000090> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2723]  core @0.000052> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2728]  core @0.000063> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2725]  core @0.000049> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2722]  core @0.000040> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2721]  core @0.000065> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2726]  core @0.000050> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2724]  core @0.000066> PLACK_ENV is set (deployment) forcing PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 34
+[2730]  core @0.035778> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2724]  core @0.024886> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2727]  core @0.035949> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2729]  core @0.035822> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2728]  core @0.035402> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2723]  core @0.036347> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2725]  core @0.035323> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2721]  core @0.031648> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2722]  core @0.032868> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2726]  core @0.028468> loading Dancer::Handler::PSGI handler in /usr/local/share/perl5/Dancer/Handler.pm l. 48
+[2728]  core @0.093624> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2729]  core @0.095458> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2724]  core @0.084535> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2727]  core @0.095765> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2722]  core @0.090948> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2723]  core @0.095019> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2725]  core @0.094395> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2730]  core @0.099963> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2726]  core @0.092267> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2721]  core @0.096146> loading handler 'Dancer::Handler::PSGI' in /usr/local/share/perl5/Dancer.pm l. 482
+[2728]  core @0.000137> request: GET / from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2728]  core @0.000621> [hit #1]Trying to match 'GET /' against /^\/admin\/manageaccount$/ (generated from '/admin/manageaccount') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.000770> [hit #1]Trying to match 'GET /' against /^\/admin\/password\/([^\/]+)$/ (generated from '/admin/password/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.000949> [hit #1]Trying to match 'GET /' against /^\/admin\/updateuser\/([^\/]+)$/ (generated from '/admin/updateuser/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.001091> [hit #1]Trying to match 'GET /' against /^\/admin\/createaccount$/ (generated from '/admin/createaccount') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.001220> [hit #1]Trying to match 'GET /' against /^\/admin\/disable\/([^\/]+)$/ (generated from '/admin/disable/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.001350> [hit #1]Trying to match 'GET /' against /^\/admin\/enable\/([^\/]+)$/ (generated from '/admin/enable/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.001479> [hit #1]Trying to match 'GET /' against /^\/admin\/roles\/([^\/]+)$/ (generated from '/admin/roles/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.001609> [hit #1]Trying to match 'GET /' against /^\/accueil$/ (generated from '/accueil') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.001736> [hit #1]Trying to match 'GET /' against /^\/clients$/ (generated from '/clients') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.001862> [hit #1]Trying to match 'GET /' against /^\/outils$/ (generated from '/outils') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.002025> [hit #1]Trying to match 'GET /' against /^\/downloads$/ (generated from '/downloads') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.002153> [hit #1]Trying to match 'GET /' against /^\/prelevements$/ (generated from '/prelevements') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.002278> [hit #1]Trying to match 'GET /' against /^\/$/ (generated from '/') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2728]  core @0.002392> [hit #1]  --> got 1 in /usr/local/share/perl5/Dancer/Route.pm l. 104
+[2728]  core @0.002608> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2728] error @0.075856> [hit #1]request to GET / crashed: Error in tempfile() using /home/git/perl-slowfox/sessions/tmpXXXXXXXXX: Could not create temp file /home/git/perl-slowfox/sessions/tmpZljnHsT40: Permission non accordÃ©e at /usr/local/share/perl5/Dancer/FileUtils.pm line 141. in /usr/local/share/perl5/Dancer/Handler.pm l. 101
+[2728]  core @0.076645> [hit #1]response: 500 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2728]  core @0.000127> request: GET /favicon.ico from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2724]  core @0.000132> request: GET /favicon.ico from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2729]  core @0.000144> request: GET /favicon.ico from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2728]  core @0.049089> [hit #2]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2729]  core @0.033979> [hit #1]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2724]  core @0.050220> [hit #1]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2727]  core @0.000221> request: GET / from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2727]  core @0.000828> [hit #1]Trying to match 'GET /' against /^\/admin\/manageaccount$/ (generated from '/admin/manageaccount') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.000971> [hit #1]Trying to match 'GET /' against /^\/admin\/password\/([^\/]+)$/ (generated from '/admin/password/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.001139> [hit #1]Trying to match 'GET /' against /^\/admin\/updateuser\/([^\/]+)$/ (generated from '/admin/updateuser/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.001278> [hit #1]Trying to match 'GET /' against /^\/admin\/createaccount$/ (generated from '/admin/createaccount') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.001407> [hit #1]Trying to match 'GET /' against /^\/admin\/disable\/([^\/]+)$/ (generated from '/admin/disable/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.001550> [hit #1]Trying to match 'GET /' against /^\/admin\/enable\/([^\/]+)$/ (generated from '/admin/enable/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.001679> [hit #1]Trying to match 'GET /' against /^\/admin\/roles\/([^\/]+)$/ (generated from '/admin/roles/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.001809> [hit #1]Trying to match 'GET /' against /^\/accueil$/ (generated from '/accueil') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.001935> [hit #1]Trying to match 'GET /' against /^\/clients$/ (generated from '/clients') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.002103> [hit #1]Trying to match 'GET /' against /^\/outils$/ (generated from '/outils') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.002235> [hit #1]Trying to match 'GET /' against /^\/downloads$/ (generated from '/downloads') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.002400> [hit #1]Trying to match 'GET /' against /^\/prelevements$/ (generated from '/prelevements') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.002547> [hit #1]Trying to match 'GET /' against /^\/$/ (generated from '/') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.002658> [hit #1]  --> got 1 in /usr/local/share/perl5/Dancer/Route.pm l. 104
+[2727]  core @0.002967> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2727]  core @0.070510> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2727]  core @0.070885> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2727]  core @0.081381> [hit #1]Trying to match 'GET /login' against /^\/admin\/manageaccount$/ (generated from '/admin/manageaccount') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.081786> [hit #1]Trying to match 'GET /login' against /^\/admin\/password\/([^\/]+)$/ (generated from '/admin/password/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.082184> [hit #1]Trying to match 'GET /login' against /^\/admin\/updateuser\/([^\/]+)$/ (generated from '/admin/updateuser/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.082546> [hit #1]Trying to match 'GET /login' against /^\/admin\/createaccount$/ (generated from '/admin/createaccount') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.082834> [hit #1]Trying to match 'GET /login' against /^\/admin\/disable\/([^\/]+)$/ (generated from '/admin/disable/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.083306> [hit #1]Trying to match 'GET /login' against /^\/admin\/enable\/([^\/]+)$/ (generated from '/admin/enable/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.083605> [hit #1]Trying to match 'GET /login' against /^\/admin\/roles\/([^\/]+)$/ (generated from '/admin/roles/:idUser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.083893> [hit #1]Trying to match 'GET /login' against /^\/accueil$/ (generated from '/accueil') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.084305> [hit #1]Trying to match 'GET /login' against /^\/clients$/ (generated from '/clients') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.084422> [hit #1]Trying to match 'GET /login' against /^\/outils$/ (generated from '/outils') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.084535> [hit #1]Trying to match 'GET /login' against /^\/downloads$/ (generated from '/downloads') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.084703> [hit #1]Trying to match 'GET /login' against /^\/prelevements$/ (generated from '/prelevements') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.084817> [hit #1]Trying to match 'GET /login' against /^\/$/ (generated from '/') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.084930> [hit #1]Trying to match 'GET /login' against /^\/login$/ (generated from '/login') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2727]  core @0.085186> [hit #1]  --> got 1 in /usr/local/share/perl5/Dancer/Route.pm l. 104
+[2727]  core @0.085409> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2727]  core @0.096583> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2727]  core @0.096728> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2727]  core @0.371238> [hit #1]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2727]  core @0.000128> request: GET /bootstrap/css/bootstrap.min.css from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2723]  core @0.000142> request: GET /fontawesome/css/font-awesome.min.css from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2722]  core @0.000188> request: GET /css/style.css from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2727]  core @0.007137> [hit #2]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2723]  core @0.005817> [hit #1]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2722]  core @0.006657> [hit #1]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2722]  core @0.000147> request: GET /bootstrap/js/bootstrap.min.js from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2727]  core @0.000131> request: GET /javascripts/app.js from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2723]  core @0.000216> request: GET /javascripts/jquery-1.8.3.min.js from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2722]  core @0.001680> [hit #2]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2727]  core @0.001659> [hit #3]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2723]  core @0.001124> [hit #2]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2727]  core @0.000157> request: GET /favicon.ico from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2727]  core @0.000945> [hit #4]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2730]  core @0.000157> request: POST /login from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2730]  core @0.000722> [hit #1]Trying to match 'POST /login' against /^\/admin\/password$/ (generated from '/admin/password') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2730]  core @0.000876> [hit #1]Trying to match 'POST /login' against /^\/admin\/updateuser$/ (generated from '/admin/updateuser') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2730]  core @0.001010> [hit #1]Trying to match 'POST /login' against /^\/admin\/createaccount$/ (generated from '/admin/createaccount') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2730]  core @0.001148> [hit #1]Trying to match 'POST /login' against /^\/admin\/updateroles$/ (generated from '/admin/updateroles') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2730]  core @0.001311> [hit #1]Trying to match 'POST /login' against /^\/login$/ (generated from '/login') in /usr/local/share/perl5/Dancer/Route.pm l. 86
+[2730]  core @0.001431> [hit #1]  --> got 1 in /usr/local/share/perl5/Dancer/Route.pm l. 104
+[2730]  core @0.001700> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2730]  core @0.018651> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2730]  core @0.018826> [hit #1]entering before hook in /usr/local/share/perl5/Dancer/Hook.pm l. 62
+[2730] debug @0.778404> [hit #1]Executing SELECT query SELECT * FROM `users`  WHERE `login`=? LIMIT 1 with params admin@admin.com in /usr/local/share/perl5/Dancer/Plugin/Database/Core/Handle.pm l. 343
+[2730] debug @0.781148> [hit #1]Connexion Failed pour User: admin@admin.com in /home/git/perl-slowfox/lib/slowfox.pm l. 84
+[2730] debug @0.781252> [hit #1]Password: admin in /home/git/perl-slowfox/lib/slowfox.pm l. 85
+[2730]  core @0.787636> [hit #1]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2730]  core @0.000129> request: GET /bootstrap/css/bootstrap.min.css from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2721]  core @0.000144> request: GET /css/style.css from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2730]  core @0.004274> [hit #2]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2721]  core @0.004928> [hit #1]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2726]  core @0.000245> request: GET /fontawesome/css/font-awesome.min.css from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2726]  core @0.004130> [hit #1]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2721]  core @0.000656> request: GET /bootstrap/js/bootstrap.min.js from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2730]  core @0.000170> request: GET /javascripts/jquery-1.8.3.min.js from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2726]  core @0.000172> request: GET /javascripts/app.js from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2721]  core @0.001507> [hit #2]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2726]  core @0.000840> [hit #2]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2730]  core @0.001172> [hit #3]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
+[2730]  core @0.000132> request: GET /favicon.ico from 192.168.0.19 in /usr/local/share/perl5/Dancer/Handler.pm l. 59
+[2730]  core @0.000855> [hit #4]response: 200 in /usr/local/share/perl5/Dancer/Handler.pm l. 184
